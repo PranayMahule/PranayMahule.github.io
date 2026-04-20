@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranay | Web Developer Portfolio</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #2563eb;
+            --secondary: #64748b;
+            --light-gray: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+
+        header {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--text); }
+        .subtitle { font-size: 1.2rem; color: var(--accent); font-weight: 600; }
+        
+        .section { margin-bottom: 3rem; }
+        h2 { border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 1.5rem; }
+
+        .project-card, .award-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: 0.3s;
+        }
+
+        .project-card:hover { border-color: var(--accent); }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        footer { text-align: center; padding: 2rem; color: var(--secondary); font-size: 0.9rem; }
+        
+        .contact-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pranay</h1>
+    <p class="subtitle">Web Developer & Logic Builder</p>
+    <p style="max-width: 600px; margin: 1rem auto; color: var(--secondary);">
+        B.Tech student blending 2.5 years of professional discipline with a passion for building high-performance, responsive web solutions.
+    </p>
+    <a href="mailto:your-email@gmail.com" class="contact-btn">Get In Touch</a>
+</header>
+
+<div class="container">
+    
+    <section class="section">
+        <h2>Technical Stack</h2>
+        <div class="skills-grid">
+            <div class="award-card"><strong>Languages:</strong> C++, PHP, JavaScript</div>
+            <div class="award-card"><strong>Frontend:</strong> HTML5, CSS3, Responsive Design</div>
+            <div class="award-card"><strong>Tools:</strong> Git, MySQL, VS Code</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Featured Project</h2>
+        <div class="project-card">
+            <h3>Online Vegetable Sales & Management</h3>
+            <span class="badge">PHP</span> <span class="badge">C++ Backend</span> <span class="badge">MySQL</span>
+            <p>Developed a full-stack e-commerce platform featuring real-time inventory management for 200+ products and optimized backend processing logic.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Awards & Achievements</h2>
+        <div class="award-card">
+            <strong>🥇 Professional Fashion Presentation</strong> - First Award for Leadership & Presentation.
+        </div>
+        <div class="award-card">
+            <strong>🏏 Best Batsman</strong> - Inter-College Tournament (Teamwork & Strategic Pressure Management).
+        </div>
+        <div class="award-card">
+            <strong>🗣️ English Conversation Excellence</strong> - First Position in Public Speaking & Debate.
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2026 Pranay | Built with Code
+</footer>
+
+</body>
+</html>

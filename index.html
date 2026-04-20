@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranay Mahule | Web Developer Portfolio</title>
+    <title>Pranay Mahule | Portfolio</title>
     <style>
         :root {
             --bg: #ffffff;
             --text: #1a1a1a;
-            --accent: #2563eb;
+            --accent: #2563eb; /* Professional Blue */
             --secondary: #64748b;
             --light-gray: #f8fafc;
         }
@@ -23,112 +23,137 @@
         }
 
         header {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
             background: var(--light-gray);
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--text); }
-        .subtitle { font-size: 1.2rem; color: var(--accent); font-weight: 600; }
+        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; color: var(--text); letter-spacing: -1px; }
+        .subtitle { font-size: 1.2rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         
-        .section { margin-bottom: 3rem; }
-        h2 { border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 1.5rem; }
+        .section { margin-bottom: 4rem; }
+        h2 { border-left: 4px solid var(--accent); padding-left: 1rem; margin-bottom: 2rem; font-size: 1.5rem; }
 
-        .project-card, .award-card {
+        .card {
             background: white;
             border: 1px solid #e2e8f0;
             padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            transition: 0.3s;
+            border-radius: 12px;
+            margin-bottom: 1.2rem;
+            transition: all 0.3s ease;
         }
 
-        .project-card:hover { border-color: var(--accent); }
+        .card:hover { 
+            border-color: var(--accent); 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
 
         .badge {
             display: inline-block;
             background: #dbeafe;
             color: var(--accent);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
             margin-right: 0.5rem;
             font-weight: 600;
+            margin-top: 0.5rem;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
-        footer { text-align: center; padding: 2rem; color: var(--secondary); font-size: 0.9rem; }
+        footer { 
+            text-align: center; 
+            padding: 4rem 2rem; 
+            background: var(--light-gray);
+            color: var(--secondary); 
+            font-size: 0.9rem; 
+            border-top: 1px solid #e2e8f0;
+        }
         
         .contact-btn {
             display: inline-block;
             background: var(--accent);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            transition: background 0.3s;
         }
+
+        .contact-btn:hover { background: #1e40af; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Pranay</h1>
-    <p class="subtitle">Web Developer & Logic Builder</p>
-    <p style="max-width: 600px; margin: 1rem auto; color: var(--secondary);">
-        B.Tech student blending 2.5 years of professional discipline with a passion for building high-performance, responsive web solutions.
+    <h1>Pranay Mahule</h1>
+    <p class="subtitle">Web Developer & Software Testing Specialist</p>
+    <p style="max-width: 650px; margin: 1.5rem auto; color: var(--secondary); font-size: 1.1rem;">
+        B.Tech professional merging technical expertise in software diagnostics with 2.5 years of disciplined work experience. Focused on building scalable web solutions and high-quality user experiences.
     </p>
-    <a href="mailto:pranaymahule759@gmail.com" class="contact-btn">Get In Touch</a>
+    <a href="mailto:pranaymahule759@gmail.com" class="contact-btn">Email Me Directly</a>
 </header>
 
 <div class="container">
     
     <section class="section">
-        <h2>Technical Stack</h2>
+        <h2>Technical Expertise</h2>
         <div class="skills-grid">
-            <div class="award-card"><strong>Languages:</strong> C++, PHP, JavaScript</div>
-            <div class="award-card"><strong>Frontend:</strong> HTML5, CSS3, Responsive Design</div>
-            <div class="award-card"><strong>Tools:</strong> Git, MySQL, VS Code</div>
+            <div class="card">
+                <strong>Core Development</strong><br>
+                <span class="badge">C++</span> <span class="badge">PHP</span> <span class="badge">JavaScript</span> <span class="badge">MySQL</span>
+            </div>
+            <div class="card">
+                <strong>Software Testing</strong><br>
+                <span class="badge">System Diagnostics</span> <span class="badge">Quality Assurance</span> <span class="badge">Verification</span>
+            </div>
         </div>
     </section>
 
     <section class="section">
-        <h2>Featured Project</h2>
-        <div class="project-card">
-            <h3>Online Vegetable Sales & Management</h3>
-            <span class="badge">PHP</span> <span class="badge">C++ Backend</span> <span class="badge">MySQL</span>
-            <p>Developed a full-stack e-commerce platform featuring real-time inventory management for 200+ products and optimized backend processing logic.</p>
+        <h2>Featured Projects</h2>
+        <div class="card">
+            <h3 style="margin-top:0;">Online Vegetable Sales & Management System</h3>
+            <p>Designed a comprehensive e-commerce platform with PHP and MySQL. Implemented backend logic to manage inventory for over 200 items with real-time updates.</p>
+            <span class="badge">Full-Stack</span> <span class="badge">Database Design</span>
         </div>
     </section>
 
     <section class="section">
-        <h2>Awards & Achievements</h2>
-        <div class="award-card">
-            <strong>🥇 Professional Fashion Presentation</strong> - First Award for Leadership & Presentation.
+        <h2>Awards & Recognition</h2>
+        <div class="card">
+            <strong>🥇 Professional Fashion Show - First Award</strong>
+            <p style="margin: 0.5rem 0; color: var(--secondary);">Awarded for excellence in leadership, stage presence, and professional presentation.</p>
         </div>
-        <div class="award-card">
-            <strong>🏏 Best Batsman</strong> - Inter-College Tournament (Teamwork & Strategic Pressure Management).
+        <div class="card">
+            <strong>🏏 Best Batsman - Inter-College Tournament</strong>
+            <p style="margin: 0.5rem 0; color: var(--secondary);">Recognized for strategic play and teamwork under high-pressure competitive environments.</p>
         </div>
-        <div class="award-card">
-            <strong>🗣️ English Conversation Excellence</strong> - First Position in Public Speaking & Debate.
+        <div class="card">
+            <strong>🗣️ English Conversation & Debate - First Position</strong>
+            <p style="margin: 0.5rem 0; color: var(--secondary);">Top rank holder in public speaking, demonstrating strong persuasive communication skills.</p>
         </div>
     </section>
 
 </div>
 
 <footer>
-    &copy; 2026 Pranay | Built with Code
+    <p>Pranay Mahule | <a href="mailto:pranaymahule759@gmail.com" style="color: var(--accent); text-decoration: none;">pranaymahule759@gmail.com</a></p>
+    <p style="margin-top: 1rem;">&copy; 2026 | Built with Clean Code</p>
 </footer>
 
 </body>

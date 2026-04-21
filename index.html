@@ -3,38 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranay Mahule | Home</title>
+    <title>Pranay Mahule | Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { --bg: #050505; --accent: #7c3aed; --text: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); }
-        nav { padding: 2rem 5%; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 2rem; font-size: 0.9rem; }
+        body { background-color: var(--bg); color: var(--text); overflow: hidden; }
+        nav { padding: 2.5rem 10%; display: flex; justify-content: space-between; align-items: center; }
+        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 3rem; font-weight: 600; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
         
-        .hero { height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 10%; }
+        .hero { height: 85vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
         
-        /* FIXED PHOTO: Face focus */
-        .pfp-container {
-            width: 280px; height: 280px; border-radius: 50%;
-            border: 4px solid var(--accent); overflow: hidden; margin-bottom: 2rem;
-            box-shadow: 0 0 50px rgba(124, 58, 237, 0.3);
+        /* FACE-CENTERED PHOTO */
+        .pfp-outer {
+            width: 320px; height: 320px; border-radius: 50%;
+            padding: 10px; background: linear-gradient(45deg, var(--accent), #3b82f6);
+            margin-bottom: 2.5rem; box-shadow: 0 0 60px rgba(124, 58, 237, 0.4);
         }
-        .pfp-container img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            object-position: 50% 15%; /* Forces the focus on the upper part of the image (the face) */
+        .pfp-inner { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #000; }
+        .pfp-inner img { 
+            width: 100%; height: 100%; 
+            object-fit: cover; 
+            object-position: 50% 15%; /* Corrects the framing to show his face */
         }
 
-        h1 { font-size: 5rem; font-weight: 900; letter-spacing: -3px; }
-        .btn { margin-top: 2rem; padding: 1rem 2.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; transition: 0.3s; }
-        .btn:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--accent); }
+        h1 { font-size: clamp(3rem, 10vw, 7rem); font-weight: 900; letter-spacing: -5px; line-height: 0.85; }
+        .sub-text { font-size: 1.5rem; color: #a1a1aa; margin-top: 1.5rem; max-width: 800px; font-weight: 300; }
+        .cta { margin-top: 3rem; padding: 1.2rem 3rem; background: var(--accent); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; transition: 0.4s; }
+        .cta:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(124, 58, 237, 0.5); }
     </style>
 </head>
 <body>
     <nav>
-        <div style="font-weight: 800; color: var(--accent);">PRANAY MAHULE</div>
+        <div style="font-weight: 900; font-size: 1.5rem; letter-spacing: -1px;">PRANAY<span style="color:var(--accent)">.</span></div>
         <div class="nav-links">
             <a href="index.html">HOME</a>
             <a href="about.html">BIOGRAPHY</a>
@@ -43,12 +45,10 @@
         </div>
     </nav>
     <section class="hero">
-        <div class="pfp-container">
-            <img src="1776708958346.jpg" alt="Pranay Mahule">
-        </div>
-        <h1>SOFTWARE<br><span style="color: var(--accent)">ENGINEER</span></h1>
-        <p style="color: #a1a1aa; max-width: 600px; margin-top: 1rem; font-size: 1.2rem;">Building high-performance systems and scalable full-stack applications.</p>
-        <a href="about.html" class="btn">VIEW BIOGRAPHY</a>
+        <div class="pfp-outer"><div class="pfp-inner"><img src="1776708958346.jpg" alt="Pranay Mahule"></div></div>
+        <h1>PRANAY<br><span style="color: var(--accent)">MAHULE</span></h1>
+        <p class="sub-text">Full-Stack Software Engineer specializing in high-performance system architectures and automated diagnostic methodologies.</p>
+        <a href="about.html" class="cta">EXPLORE BIOGRAPHY</a>
     </section>
 </body>
 </html>

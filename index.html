@@ -3,250 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranay Mahule | Full-Stack Engineer</title>
+    <title>Pranay Mahule | Full-Stack Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --sidebar-bg: #0a0a0c;
-            --main-bg: #0f1014;
+            --bg: #050505;
             --accent: #7c3aed;
-            --accent-glow: rgba(124, 58, 237, 0.3);
-            --text-bright: #ffffff;
-            --text-muted: #94a3b8;
-            --card-bg: #16171d;
-            --border: rgba(255, 255, 255, 0.05);
+            --accent-soft: rgba(124, 58, 237, 0.1);
+            --text: #ffffff;
+            --text-dim: #a1a1aa;
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--main-bg); color: var(--text-bright); display: flex; height: 100vh; overflow: hidden; }
+        body { background-color: var(--bg); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* Sidebar Navigation */
+        /* Navigation Overlay */
         nav {
-            width: 280px;
-            background: var(--sidebar-bg);
-            border-right: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-            flex-shrink: 0;
+            position: fixed; top: 0; width: 100%; height: 80px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 5%; z-index: 1000; background: linear-gradient(to bottom, #050505, transparent);
         }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; color: var(--accent); }
+        .nav-links { display: flex; gap: 3rem; }
+        .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
 
-        .profile-area { text-align: center; margin-bottom: 3rem; }
-        .pfp-sidebar { width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; margin-bottom: 1rem; }
-        .profile-area h2 { font-size: 1.2rem; margin-bottom: 0.2rem; }
-        .profile-area p { font-size: 0.8rem; color: var(--accent); font-weight: 700; letter-spacing: 1px; }
+        /* Full Page Section Styling */
+        section { min-height: 100vh; width: 100%; padding: 120px 10% 60px; display: flex; flex-direction: column; }
+        
+        .hero { justify-content: center; align-items: center; text-align: center; }
+        .hero-img { width: 250px; height: 250px; border-radius: 50%; border: 3px solid var(--accent); object-fit: cover; margin-bottom: 2rem; box-shadow: 0 0 60px var(--accent-soft); }
+        h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-bottom: 2rem; }
+        
+        /* Information Blocks - Full Width */
+        .content-block { width: 100%; max-width: 1200px; margin: 0 auto; margin-bottom: 4rem; }
+        .page-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 2rem; border-left: 8px solid var(--accent); padding-left: 2rem; }
+        .desc-text { font-size: 1.3rem; line-height: 1.8; color: var(--text-dim); margin-bottom: 2rem; max-width: 900px; }
 
-        .nav-links { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
-        .nav-links a {
-            text-decoration: none; color: var(--text-muted); padding: 1rem; border-radius: 12px;
-            display: flex; align-items: center; gap: 1rem; transition: 0.3s; font-size: 0.95rem;
+        /* Education Page (College Image Background) */
+        .edu-hero {
+            position: relative; border-radius: 40px; overflow: hidden; margin-top: 2rem;
+            min-height: 600px; display: flex; align-items: flex-end; padding: 4rem;
         }
-        .nav-links a i { width: 20px; text-align: center; }
-        .nav-links a:hover, .nav-links a.active { background: var(--card-bg); color: var(--accent); }
+        .edu-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.4); }
+        .edu-details { background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); padding: 3rem; border-radius: 20px; border: 1px solid var(--border); width: 100%; }
+        
+        /* Grid for Deep Info */
+        .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem; }
+        .detail-box { padding: 2rem; border-top: 1px solid var(--accent); }
+        .detail-box h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--accent); }
+        .detail-box p { color: var(--text-dim); line-height: 1.6; }
 
-        /* Main Content Container */
-        main { flex-grow: 1; overflow-y: auto; padding: 4rem; scroll-behavior: smooth; }
+        /* Contact Section Full Page */
+        .contact-full { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+        .contact-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .social-card { background: var(--accent-soft); padding: 3rem; border-radius: 20px; text-decoration: none; color: white; transition: 0.4s; text-align: center; border: 1px solid transparent; }
+        .social-card:hover { border-color: var(--accent); transform: translateY(-10px); background: rgba(124, 58, 237, 0.2); }
+        .social-card i { font-size: 3rem; margin-bottom: 1.5rem; color: var(--accent); }
 
-        .content-section { display: none; max-width: 900px; margin: 0 auto; animation: fadeIn 0.5s ease forwards; }
-        .content-section.active { display: block; }
+        footer { text-align: center; padding: 4rem; border-top: 1px solid var(--border); font-size: 0.9rem; opacity: 0.5; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Detail Styling */
-        h1 { font-size: 3rem; margin-bottom: 1.5rem; letter-spacing: -1px; }
-        .section-header { margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
-        .section-header p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; }
-
-        /* Cards & Info Blocks */
-        .info-card { 
-            background: var(--card-bg); border: 1px solid var(--border); padding: 2.5rem; 
-            border-radius: 24px; margin-bottom: 2rem; transition: 0.3s;
-        }
-        .info-card:hover { border-color: var(--accent); }
-        .info-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent); }
-        .info-card p { line-height: 1.7; color: var(--text-muted); margin-bottom: 1.5rem; }
-
-        .status-badge { 
-            display: inline-block; padding: 4px 12px; background: rgba(34, 197, 94, 0.1); 
-            color: #4ade80; border: 1px solid #22c55e; border-radius: 100px; font-size: 0.8rem; font-weight: 700;
-        }
-
-        .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .tag { background: rgba(255, 255, 255, 0.05); padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; }
-
-        .uni-display { display: flex; align-items: center; gap: 2rem; }
-        .uni-logo { width: 80px; height: 80px; background: white; padding: 10px; border-radius: 15px; }
-
-        .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
-        .social-item { 
-            display: flex; align-items: center; gap: 1rem; background: var(--card-bg); 
-            padding: 1.5rem; border-radius: 16px; text-decoration: none; color: var(--text-bright);
-            border: 1px solid var(--border); transition: 0.3s;
-        }
-        .social-item:hover { border-color: var(--accent); transform: scale(1.02); }
-        .social-item i { font-size: 1.5rem; color: var(--accent); }
-
-        @media (max-width: 900px) {
-            body { flex-direction: column; }
-            nav { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 1rem; }
-            .nav-links { flex-direction: row; overflow-x: auto; }
-            .profile-area { display: none; }
-            main { padding: 2rem; }
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .page-title { font-size: 2.5rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="profile-area">
-            <img src="1776708958346.jpg" alt="Pranay Mahule" class="pfp-sidebar">
-            <h2>Pranay Mahule</h2>
-            <p>FULL-STACK ENGINEER</p>
-        </div>
+        <div class="logo">PRANAY.DEV</div>
         <div class="nav-links">
-            <a href="#home" class="active" onclick="showSection('home')"><i class="fas fa-home"></i> Introduction</a>
-            <a href="#about" onclick="showSection('about')"><i class="fas fa-user"></i> About Me</a>
-            <a href="#education" onclick="showSection('education')"><i class="fas fa-graduation-cap"></i> Education</a>
-            <a href="#projects" onclick="showSection('projects')"><i class="fas fa-code"></i> Projects</a>
-            <a href="#contact" onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="#home">HOME</a>
+            <a href="#about">BIOGRAPHY</a>
+            <a href="#education">COLLEGE</a>
+            <a href="#projects">PORTFOLIO</a>
+            <a href="#contact">CONTACT</a>
         </div>
     </nav>
 
-    <main>
-        <div id="home" class="content-section active">
-            <div class="section-header">
-                <h1>Hello, I'm Pranay.</h1>
-                <p>A Full-Stack Developer with a deep focus on building scalable web applications and high-performance system architectures. I specialize in bridging the gap between clean UI design and robust backend logic.</p>
-            </div>
-            <div class="info-card">
-                <h3>Core Focus</h3>
-                <p>I build enterprise-grade software solutions using modern frameworks. My philosophy centers on writing clean, maintainable code and optimizing user experiences through diagnostic data and software engineering best practices.</p>
-                <div class="tag-list">
-                    <span class="tag">System Design</span>
-                    <span class="tag">Database Optimization</span>
-                    <span class="tag">React & Node.js</span>
-                    <span class="tag">Quality Assurance</span>
+    <section id="home" class="hero">
+        <img src="1776708958346.jpg" alt="Pranay Mahule" class="hero-img">
+        <h1>PRANAY<br><span style="color: var(--accent)">MAHULE</span></h1>
+        <p class="desc-text" style="text-align: center; margin-top: 1rem;">Architecting high-scale digital experiences and robust software solutions with a focus on Full-Stack engineering and performance diagnostics.</p>
+    </section>
+
+    <section id="about">
+        <div class="content-block">
+            <h2 class="page-title">The Biography</h2>
+            <p class="desc-text">
+                Pranay Mahule is a dedicated Software Engineer based in India, driven by the challenge of solving complex computational problems. My approach to development combines logical precision with creative problem-solving, ensuring that every line of code serves a specific, optimized purpose.
+            </p>
+            <div class="detail-grid">
+                <div class="detail-box">
+                    <h3>Engineering Mindset</h3>
+                    <p>I view software as a living architecture. From my early days at university to building full-scale applications, I have focused on the "Why" behind the code—prioritizing efficiency, security, and scalability above all else.</p>
+                </div>
+                <div class="detail-box">
+                    <h3>The Tech Stack</h3>
+                    <p>I specialize in JavaScript-based environments, MySQL database management, and PHP-driven backends. I am constantly expanding my expertise in Software Diagnostics and Quality Assurance methodologies.</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Global Vision</h3>
+                    <p>My goal is to contribute to global tech infrastructures, creating tools that make the digital world more accessible and stable for millions of users worldwide.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div id="about" class="content-section">
-            <div class="section-header">
-                <h1>About My Journey</h1>
-                <p>A comprehensive look at my professional background and technical foundations.</p>
-            </div>
-            <div class="info-card">
-                <h3>The Technical Foundation</h3>
-                <p>My journey in software engineering began at <strong>Rashtrasant Tukadoji Maharaj Nagpur University</strong>. Over the years, I have transitioned from learning fundamental algorithms to architecting complex full-stack systems.</p>
-                <p>I am passionate about "Software Diagnostics"—the art of ensuring code doesn't just work, but thrives under pressure. I spent a significant portion of my training focusing on how to break systems so I could build them back stronger.</p>
-            </div>
-            <div class="info-card">
-                <h3>Interests & Expertise</h3>
-                <p>Beyond coding, I am fascinated by AI-driven UI/UX and automation. I enjoy exploring how machine learning can be integrated into daily web tools to improve efficiency and speed.</p>
-            </div>
-        </div>
-
-        <div id="education" class="content-section">
-            <div class="section-header">
-                <h1>Academic Background</h1>
-                <p>Detailed overview of my university degree and institutional training.</p>
-            </div>
-            <div class="info-card">
-                <span class="status-badge">Completed</span>
-                <div class="uni-display" style="margin-top: 1.5rem;">
-                    <img src="1698939571245.jpg" alt="RTMNU Logo" class="uni-logo">
-                    <div>
-                        <h3>Rashtrasant Tukadoji Maharaj Nagpur University</h3>
-                        <p style="color: white; margin-bottom: 0;">Bachelor of Technology in Computer Software Engineering</p>
+    <section id="education">
+        <div class="content-block">
+            <h2 class="page-title">University Profile</h2>
+            <p class="desc-text">A detailed record of my academic journey and institutional excellence.</p>
+            
+            <div class="edu-hero">
+                <img src="1749038381_row_206.jpg" alt="RTMNU Campus" class="edu-bg">
+                <div class="edu-details">
+                    <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem;">
+                        <img src="1698939571245.jpg" alt="Logo" style="width: 80px; height: 80px; background: white; padding: 5px; border-radius: 10px;">
+                        <div>
+                            <h2 style="font-size: 2rem;">Rashtrasant Tukadoji Maharaj Nagpur University</h2>
+                            <p style="color: var(--accent); font-weight: 700; letter-spacing: 2px;">GRADUATED CLASS OF 2026</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 1.2rem; line-height: 1.6;">
+                        I have completed my <strong>Bachelor of Technology in Computer Software Engineering</strong> at this prestigious institution. During my time here, I was deeply involved in advanced technical workshops, software architecture seminars, and peer-led engineering projects.
+                    </p>
+                    <div class="detail-grid" style="margin-top: 2rem; gap: 1rem;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
+                            <h4 style="color: var(--accent);">Status</h4>
+                            <p>Completed Successfully</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
+                            <h4 style="color: var(--accent);">Specialization</h4>
+                            <p>Software Architecture & Systems</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
+                            <h4 style="color: var(--accent);">Key Focus</h4>
+                            <p>Full-Stack Implementation</p>
+                        </div>
                     </div>
                 </div>
-                <div style="margin-top: 2rem; padding-left: 1rem; border-left: 2px solid var(--accent);">
-                    <p>I successfully completed an intensive curriculum focused on Software Architecture, Advanced Data Structures, and Software Diagnostic methodologies.</p>
-                    <p><strong>Institutional Training:</strong> Completed professional-grade training within my institute focused on Full-Stack deployment and MySQL database management.</p>
-                </div>
             </div>
         </div>
+    </section>
 
-        <div id="projects" class="content-section">
-            <div class="section-header">
-                <h1>Featured Work</h1>
-                <p>Technical projects that showcase my ability to design, develop, and test complex systems.</p>
+    <section id="projects">
+        <div class="content-block">
+            <h2 class="page-title">The Portfolio</h2>
+            <p class="desc-text">Deep-dive into my technical implementations and project lifecycle management.</p>
+            
+            <div class="info-card" style="background: var(--accent-soft); padding: 4rem; border-radius: 30px; margin-bottom: 3rem;">
+                <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Veg-Management System</h3>
+                <p class="desc-text">A complete commercial management system designed to handle high-frequency retail transactions and complex inventory tracking. Built using PHP and MySQL, this system ensures 100% data integrity and real-time reporting for business owners.</p>
+                <ul style="list-style: none; display: flex; gap: 1rem;">
+                    <li style="border: 1px solid var(--accent); padding: 0.5rem 1rem; border-radius: 10px;">Backend Architecture</li>
+                    <li style="border: 1px solid var(--accent); padding: 0.5rem 1rem; border-radius: 10px;">Database Design</li>
+                </ul>
             </div>
-            <div class="info-card">
-                <h3>Veg-Management System</h3>
-                <p>A full-stack retail solution designed for inventory precision. This system handles real-time stock updates, automated sales logging, and database synchronization using PHP and MySQL.</p>
-                <div class="tag-list">
-                    <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Backend Logic</span>
-                </div>
-            </div>
-            <div class="info-card">
-                <h3>TechFlow UI</h3>
-                <p>An immersive landing page concept for modern tech organizations. This project features advanced CSS animations, glass-morphism effects, and a highly responsive design tailored for various devices.</p>
-                <div class="tag-list">
-                    <span class="tag">UI/UX</span><span class="tag">CSS3</span><span class="tag">Responsive Design</span>
-                </div>
-            </div>
-            <div class="info-card">
-                <h3>Software Diagnostics Module</h3>
-                <p>A project dedicated to quality assurance and system stability. Implemented diagnostic testing protocols to identify edge-case bugs and ensure 99.9% uptime for enterprise-level applications.</p>
-                <div class="tag-list">
-                    <span class="tag">QA Testing</span><span class="tag">Bug Tracking</span><span class="tag">System Stability</span>
-                </div>
+
+            <div class="info-card" style="background: rgba(255,255,255,0.03); padding: 4rem; border-radius: 30px;">
+                <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">TechFlow UI Framework</h3>
+                <p class="desc-text">An advanced frontend design system utilizing modern CSS variables and glass-morphism to provide an immersive tech experience. This project demonstrates my ability to create visually stunning interfaces without sacrificing load speeds or performance.</p>
             </div>
         </div>
+    </section>
 
-        <div id="contact" class="content-section">
-            <div class="section-header">
-                <h1>Get In Touch</h1>
-                <p>I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-            </div>
-            <div class="info-card" style="text-align: center;">
-                <h3>Professional Channels</h3>
-                <p>Feel free to reach out through any of the following platforms:</p>
-                <div class="social-grid">
-                    <a href="mailto:pranaymahule759@gmail.com" class="social-item">
-                        <i class="fas fa-envelope"></i>
-                        <div><strong>Gmail</strong><br><small>Direct Email</small></div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/pranay-mahule-018801291/" target="_blank" class="social-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div><strong>LinkedIn</strong><br><small>Professional Network</small></div>
-                    </a>
-                    <a href="https://wa.me/917559497704" target="_blank" class="social-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div><strong>WhatsApp</strong><br><small>Instant Messaging</small></div>
-                    </a>
-                    <a href="https://www.facebook.com/share/18VbnqZxmP/" target="_blank" class="social-item">
-                        <i class="fab fa-facebook"></i>
-                        <div><strong>Facebook</strong><br><small>Social Contact</small></div>
-                    </a>
-                    <a href="https://github.com/PranayMahule" target="_blank" class="social-item" style="grid-column: span 2;">
-                        <i class="fab fa-github"></i>
-                        <div><strong>GitHub</strong><br><small>Code Repository</small></div>
-                    </a>
-                </div>
+    <section id="contact" class="contact-full">
+        <div class="content-block" style="text-align: center;">
+            <h2 class="page-title" style="border: none; padding: 0;">Connect with Pranay</h2>
+            <p class="desc-text" style="margin: 0 auto 4rem auto;">Available for professional opportunities, technical consultations, and engineering collaborations.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:pranaymahule759@gmail.com" class="social-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>pranaymahule759@gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/in/pranay-mahule-018801291/" target="_blank" class="social-icon social-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Professional Profile</p>
+                </a>
+                <a href="https://www.facebook.com/share/18VbnqZxmP/" target="_blank" class="social-icon social-card">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Facebook</h3>
+                    <p>Social Presence</p>
+                </a>
+                <a href="https://github.com/PranayMahule" target="_blank" class="social-icon social-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Code Repositories</p>
+                </a>
             </div>
         </div>
-    </main>
+    </section>
 
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            // Show the selected section
-            document.getElementById(sectionId).classList.add('active');
-            // Update nav links
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href') === '#' + sectionId) {
-                    link.classList.add('active');
-                }
-            });
-            // Scroll to top of main area
-            document.querySelector('main').scrollTop = 0;
-        }
-    </script>
+    <footer>
+        &copy; 2026 Pranay Mahule. All rights reserved. | Software Engineering Excellence
+    </footer>
+
 </body>
 </html>

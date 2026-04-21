@@ -2,42 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Biography | Pranay Mahule</title>
+    <title>About | Pranay Mahule</title>
     <style>
         :root { --bg: #030303; --accent: #7c3aed; --text: #ffffff; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.9; }
         nav { padding: 2.5rem 10%; display: flex; justify-content: space-between; position: fixed; width: 100%; top: 0; background: rgba(3,3,3,0.8); backdrop-filter: blur(20px); z-index: 100; }
-        .nav-links a { color: #71717a; text-decoration: none; margin-left: 3rem; font-weight: 700; }
         .container { max-width: 1200px; margin: 0 auto; padding: 12rem 5%; }
-        h1 { font-size: 6rem; font-weight: 900; letter-spacing: -4px; color: var(--accent); margin-bottom: 4rem; }
-        .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
-        .bio-text { font-size: 1.3rem; color: #d4d4d8; text-align: justify; }
-        .skill-card { background: #0c0c0c; border: 1px solid #1a1a1a; padding: 4rem; border-radius: 40px; margin-top: 6rem; }
-        .skill-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
-        .skill-item { background: #161616; padding: 1.5rem; border-radius: 15px; border-left: 4px solid var(--accent); font-weight: 700; }
+        h1 { font-size: 6.5rem; font-weight: 900; letter-spacing: -5px; color: var(--accent); margin-bottom: 4rem; }
+        .bio-section { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
+        .bio-text { font-size: 1.35rem; color: #d4d4d8; text-align: justify; }
+        .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 6rem; }
+        .skill-box { background: #0c0c0c; padding: 3rem; border-radius: 35px; border: 1px solid #1a1a1a; }
+        .skill-box h3 { color: var(--accent); margin-bottom: 1rem; font-size: 1.6rem; }
     </style>
 </head>
 <body>
     <nav>
         <div style="font-weight: 900; font-size: 1.5rem;">PRANAY<span style="color:var(--accent)">_</span></div>
-        <div class="nav-links"><a href="index.html">HOME</a><a href="about.html" style="color:white">BIOGRAPHY</a><a href="work.html">PROJECTS</a><a href="contact.html">CONTACT</a></div>
+        <div style="display:flex; gap:3rem">
+            <a href="index.html" style="color:#71717a; text-decoration:none">HOME</a>
+            <a href="about.html" style="color:white; text-decoration:none; font-weight:700">ABOUT</a>
+            <a href="education.html" style="color:#71717a; text-decoration:none">EDUCATION</a>
+            <a href="contact.html" style="color:#71717a; text-decoration:none">CONTACT</a>
+        </div>
     </nav>
     <div class="container">
-        <h1>Biography.</h1>
-        <div class="bio-grid">
-            <p class="bio-text">Pranay Mahule is a solution-oriented Software Engineer with a specialized focus on building end-to-end digital infrastructures. His professional journey is defined by a rigorous approach to software development, ensuring that every line of code serves a specific, optimized purpose. He views software as a living architecture, prioritizing efficiency, security, and scalability above all else.</p>
-            <p class="bio-text">Beyond technical execution, he is a strategic thinker who views software as a tool for global transformation. He remains committed to staying at the forefront of AI integration and system security to provide users with tools that are as safe as they are powerful. His work in Software Diagnostics proactive identifies system vulnerabilities before they reach the end-user.</p>
+        <h1>About Me.</h1>
+        <div class="bio-section">
+            <p class="bio-text">Pranay Mahule is a solution-oriented Software Engineer with a specialized focus on building end-to-end digital infrastructures. He views software as a living architecture, prioritizing efficiency, security, and scalability above all else. His journey is defined by a rigorous approach to full-stack development, ensuring optimized logic from the backend to the user interface.</p>
+            <p class="bio-text">Dedicated to high-fidelity engineering, Pranay specializes in modern frameworks like the MERN stack while maintaining deep expertise in PHP and MySQL database management. He believes in proactive system diagnostics—identifying and resolving architectural bottlenecks before they ever reach the end-user.</p>
         </div>
-        <div class="skill-card">
-            <h2 style="font-size: 3rem;">Technical Expertise</h2>
-            <div class="skill-list">
-                <div class="skill-item">Full-Stack Development</div>
-                <div class="skill-item">Database Architecture</div>
-                <div class="skill-item">System Diagnostics</div>
-                <div class="skill-item">PHP & Node.js</div>
-                <div class="skill-item">MySQL Management</div>
-                <div class="skill-item">UI/UX Engineering</div>
-            </div>
+        <div class="skill-grid">
+            <div class="skill-box"><h3>Development</h3><p>Full-Stack Logic, PHP, Node.js, and API Orchestration.</p></div>
+            <div class="skill-box"><h3>Architecture</h3><p>MySQL Management and Distributed Database Design.</p></div>
+            <div class="skill-box"><h3>Interfaces</h3><p>Responsive UI/UX with a focus on immersive tech aesthetics.</p></div>
         </div>
     </div>
 </body>

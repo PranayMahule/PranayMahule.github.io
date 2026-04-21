@@ -4,38 +4,31 @@
     <meta charset="UTF-8">
     <title>About | Pranay Mahule</title>
     <style>
-        :root { --bg: #030303; --accent: #7c3aed; --text: #ffffff; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.9; }
-        nav { padding: 2.5rem 10%; display: flex; justify-content: space-between; position: fixed; width: 100%; top: 0; background: rgba(3,3,3,0.8); backdrop-filter: blur(20px); z-index: 100; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 12rem 5%; }
-        h1 { font-size: 6.5rem; font-weight: 900; letter-spacing: -5px; color: var(--accent); margin-bottom: 4rem; }
-        .bio-section { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
-        .bio-text { font-size: 1.35rem; color: #d4d4d8; text-align: justify; }
-        .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 6rem; }
-        .skill-box { background: #0c0c0c; padding: 3rem; border-radius: 35px; border: 1px solid #1a1a1a; }
-        .skill-box h3 { color: var(--accent); margin-bottom: 1rem; font-size: 1.6rem; }
+        :root { --bg: #030303; --accent: #7c3aed; }
+        body { background-color: var(--bg); color: white; font-family: 'Inter', sans-serif; line-height: 1.8; }
+        nav { padding: 2rem 10%; display: flex; justify-content: space-between; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 5rem 5%; }
+        h1 { font-size: 5rem; font-weight: 900; color: var(--accent); margin-bottom: 3rem; }
+        .content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 5rem; }
+        .skill-box { background: #0c0c0c; padding: 2rem; border-radius: 20px; border: 1px solid #222; }
+        .skill-box h3 { color: var(--accent); margin-bottom: 1rem; }
     </style>
 </head>
 <body>
     <nav>
-        <div style="font-weight: 900; font-size: 1.5rem;">PRANAY<span style="color:var(--accent)">_</span></div>
-        <div style="display:flex; gap:3rem">
-            <a href="index.html" style="color:#71717a; text-decoration:none">HOME</a>
-            <a href="about.html" style="color:white; text-decoration:none; font-weight:700">ABOUT</a>
-            <a href="education.html" style="color:#71717a; text-decoration:none">EDUCATION</a>
-            <a href="contact.html" style="color:#71717a; text-decoration:none">CONTACT</a>
-        </div>
+        <div style="font-weight:900; font-size:1.5rem">PRANAY<span style="color:var(--accent)">_</span></div>
+        <div class="nav-links"><a href="index.html" style="color:#71717a; text-decoration:none; margin-left:2rem">HOME</a><a href="about.html" style="color:white; text-decoration:none; margin-left:2rem">ABOUT</a></div>
     </nav>
     <div class="container">
-        <h1>About Me.</h1>
-        <div class="bio-section">
-            <p class="bio-text">Pranay Mahule is a solution-oriented Software Engineer with a specialized focus on building end-to-end digital infrastructures. He views software as a living architecture, prioritizing efficiency, security, and scalability above all else. His journey is defined by a rigorous approach to full-stack development, ensuring optimized logic from the backend to the user interface.</p>
-            <p class="bio-text">Dedicated to high-fidelity engineering, Pranay specializes in modern frameworks like the MERN stack while maintaining deep expertise in PHP and MySQL database management. He believes in proactive system diagnostics—identifying and resolving architectural bottlenecks before they ever reach the end-user.</p>
+        <h1>Biography.</h1>
+        <div class="content">
+            <p>I am a solution-oriented Software Engineer focused on building scalable end-to-end digital infrastructures. My work balances high-speed backend efficiency with immersive frontend experiences.</p>
+            <p>Specializing in the MERN stack and PHP/MySQL, I prioritize "Clean Architecture" to ensure every system is performant, secure, and ready for long-term growth.</p>
         </div>
-        <div class="skill-grid">
-            <div class="skill-box"><h3>Development</h3><p>Full-Stack Logic, PHP, Node.js, and API Orchestration.</p></div>
-            <div class="skill-box"><h3>Architecture</h3><p>MySQL Management and Distributed Database Design.</p></div>
-            <div class="skill-box"><h3>Interfaces</h3><p>Responsive UI/UX with a focus on immersive tech aesthetics.</p></div>
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+            <div class="skill-box"><h3>Frontend</h3><p>React, Modern UI frameworks, Glassmorphism.</p></div>
+            <div class="skill-box"><h3>Backend</h3><p>Node.js, PHP, API Orchestration.</p></div>
+            <div class="skill-box"><h3>Database</h3><p>MySQL, MongoDB, Data Architecture.</p></div>
         </div>
     </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranay Mahule | Full-Stack Architect</title>
+    <title>Pranay Mahule | Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { --bg: #030303; --accent: #7c3aed; --text: #ffffff; }
@@ -15,22 +15,22 @@
         
         .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #111 0%, #030303 100%); }
         
-        /* FACE-CENTERED PHOTO */
+        /* FACE-CENTERED PHOTO LOGIC */
         .pfp-frame {
-            width: 320px; height: 320px; border-radius: 50%;
-            padding: 6px; background: linear-gradient(135deg, var(--accent), #3b82f6);
+            width: 340px; height: 340px; border-radius: 50%;
+            padding: 8px; background: linear-gradient(135deg, var(--accent), #3b82f6);
             margin-bottom: 2.5rem; box-shadow: 0 0 80px rgba(124, 58, 237, 0.25);
         }
         .pfp-inner { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #000; }
         .pfp-inner img { 
             width: 100%; height: 100%; 
             object-fit: cover; 
-            object-position: 50% 15%; /* Forces focus on the face */
+            object-position: 50% 15%; /* Ensures the face is centered */
         }
 
-        h1 { font-size: clamp(3rem, 12vw, 8rem); font-weight: 900; letter-spacing: -6px; line-height: 0.85; margin-bottom: 1.5rem; }
+        h1 { font-size: clamp(3rem, 12vw, 8.5rem); font-weight: 900; letter-spacing: -6px; line-height: 0.8; margin-bottom: 1.5rem; }
         .hero-tagline { font-size: 1.6rem; color: #a1a1aa; max-width: 800px; font-weight: 400; line-height: 1.4; }
-        .cta-btn { margin-top: 3.5rem; padding: 1.2rem 4rem; background: var(--accent); color: white; text-decoration: none; border-radius: 100px; font-weight: 800; transition: 0.4s; box-shadow: 0 0 40px rgba(124, 58, 237, 0.3); }
+        .cta-btn { margin-top: 3.5rem; padding: 1.2rem 4.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: 100px; font-weight: 800; transition: 0.4s; box-shadow: 0 0 40px rgba(124, 58, 237, 0.3); }
         .cta-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(124, 58, 237, 0.5); }
     </style>
 </head>
@@ -39,16 +39,16 @@
         <div style="font-weight: 900; font-size: 1.8rem; letter-spacing: -1px;">PRANAY<span style="color:var(--accent)">_</span></div>
         <div class="nav-links">
             <a href="index.html">01. HOME</a>
-            <a href="about.html">02. BIOGRAPHY</a>
-            <a href="work.html">03. PROJECTS</a>
+            <a href="about.html">02. ABOUT</a>
+            <a href="education.html">03. EDUCATION</a>
             <a href="contact.html">04. CONTACT</a>
         </div>
     </nav>
     <section class="hero">
         <div class="pfp-frame"><div class="pfp-inner"><img src="1776708958346.jpg" alt="Pranay Mahule"></div></div>
         <h1>SOFTWARE<br><span style="color: var(--accent)">ENGINEER</span></h1>
-        <p class="hero-tagline">Architecting high-scale digital experiences and robust software solutions with a focus on system diagnostics and full-stack performance.</p>
-        <a href="about.html" class="cta-btn">ENTER BIOGRAPHY</a>
+        <p class="hero-tagline">Developing robust digital architectures and high-performance system solutions with a focus on full-stack innovation.</p>
+        <a href="about.html" class="cta-btn">ENTER PORTFOLIO</a>
     </section>
 </body>
 </html>

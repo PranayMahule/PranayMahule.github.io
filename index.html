@@ -3,207 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranay Mahule | Full-Stack Software Engineer</title>
+    <title>Pranay Mahule | Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --bg: #050505;
-            --accent: #7c3aed;
-            --accent-soft: rgba(124, 58, 237, 0.1);
-            --text: #ffffff;
-            --text-dim: #a1a1aa;
-            --border: rgba(255, 255, 255, 0.1);
-        }
-
+        :root { --bg: #050505; --accent: #7c3aed; --text: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
-
-        /* Navigation Overlay */
-        nav {
-            position: fixed; top: 0; width: 100%; height: 80px;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 0 5%; z-index: 1000; background: linear-gradient(to bottom, #050505, transparent);
-        }
-        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; color: var(--accent); }
-        .nav-links { display: flex; gap: 3rem; }
-        .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        body { background-color: var(--bg); color: var(--text); }
+        nav { padding: 2rem 5%; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 2rem; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--accent); }
-
-        /* Full Page Section Styling */
-        section { min-height: 100vh; width: 100%; padding: 120px 10% 60px; display: flex; flex-direction: column; }
         
-        .hero { justify-content: center; align-items: center; text-align: center; }
-        .hero-img { width: 250px; height: 250px; border-radius: 50%; border: 3px solid var(--accent); object-fit: cover; margin-bottom: 2rem; box-shadow: 0 0 60px var(--accent-soft); }
-        h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-bottom: 2rem; }
+        .hero { height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 10%; }
         
-        /* Information Blocks - Full Width */
-        .content-block { width: 100%; max-width: 1200px; margin: 0 auto; margin-bottom: 4rem; }
-        .page-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 2rem; border-left: 8px solid var(--accent); padding-left: 2rem; }
-        .desc-text { font-size: 1.3rem; line-height: 1.8; color: var(--text-dim); margin-bottom: 2rem; max-width: 900px; }
-
-        /* Education Page (College Image Background) */
-        .edu-hero {
-            position: relative; border-radius: 40px; overflow: hidden; margin-top: 2rem;
-            min-height: 600px; display: flex; align-items: flex-end; padding: 4rem;
+        /* FIXED PHOTO: Face focus */
+        .pfp-container {
+            width: 280px; height: 280px; border-radius: 50%;
+            border: 4px solid var(--accent); overflow: hidden; margin-bottom: 2rem;
+            box-shadow: 0 0 50px rgba(124, 58, 237, 0.3);
         }
-        .edu-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.4); }
-        .edu-details { background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); padding: 3rem; border-radius: 20px; border: 1px solid var(--border); width: 100%; }
-        
-        /* Grid for Deep Info */
-        .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem; }
-        .detail-box { padding: 2rem; border-top: 1px solid var(--accent); }
-        .detail-box h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--accent); }
-        .detail-box p { color: var(--text-dim); line-height: 1.6; }
-
-        /* Contact Section Full Page */
-        .contact-full { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
-        .contact-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .social-card { background: var(--accent-soft); padding: 3rem; border-radius: 20px; text-decoration: none; color: white; transition: 0.4s; text-align: center; border: 1px solid transparent; }
-        .social-card:hover { border-color: var(--accent); transform: translateY(-10px); background: rgba(124, 58, 237, 0.2); }
-        .social-card i { font-size: 3rem; margin-bottom: 1.5rem; color: var(--accent); }
-
-        footer { text-align: center; padding: 4rem; border-top: 1px solid var(--border); font-size: 0.9rem; opacity: 0.5; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 3.5rem; }
-            .page-title { font-size: 2.5rem; }
-            .nav-links { display: none; }
+        .pfp-container img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: 50% 15%; /* Forces the focus on the upper part of the image (the face) */
         }
+
+        h1 { font-size: 5rem; font-weight: 900; letter-spacing: -3px; }
+        .btn { margin-top: 2rem; padding: 1rem 2.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; transition: 0.3s; }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--accent); }
     </style>
 </head>
 <body>
-
     <nav>
-        <div class="logo">PRANAY.DEV</div>
+        <div style="font-weight: 800; color: var(--accent);">PRANAY MAHULE</div>
         <div class="nav-links">
-            <a href="#home">HOME</a>
-            <a href="#about">BIOGRAPHY</a>
-            <a href="#education">COLLEGE</a>
-            <a href="#projects">PORTFOLIO</a>
-            <a href="#contact">CONTACT</a>
+            <a href="index.html">HOME</a>
+            <a href="about.html">BIOGRAPHY</a>
+            <a href="education.html">COLLEGE</a>
+            <a href="contact.html">CONTACT</a>
         </div>
     </nav>
-
-    <section id="home" class="hero">
-        <img src="1776708958346.jpg" alt="Pranay Mahule" class="hero-img">
-        <h1>PRANAY<br><span style="color: var(--accent)">MAHULE</span></h1>
-        <p class="desc-text" style="text-align: center; margin-top: 1rem;">Architecting high-scale digital experiences and robust software solutions with a focus on Full-Stack engineering and performance diagnostics.</p>
-    </section>
-
-    <section id="about">
-        <div class="content-block">
-            <h2 class="page-title">The Biography</h2>
-            <p class="desc-text">
-                Pranay Mahule is a dedicated Software Engineer based in India, driven by the challenge of solving complex computational problems. My approach to development combines logical precision with creative problem-solving, ensuring that every line of code serves a specific, optimized purpose.
-            </p>
-            <div class="detail-grid">
-                <div class="detail-box">
-                    <h3>Engineering Mindset</h3>
-                    <p>I view software as a living architecture. From my early days at university to building full-scale applications, I have focused on the "Why" behind the code—prioritizing efficiency, security, and scalability above all else.</p>
-                </div>
-                <div class="detail-box">
-                    <h3>The Tech Stack</h3>
-                    <p>I specialize in JavaScript-based environments, MySQL database management, and PHP-driven backends. I am constantly expanding my expertise in Software Diagnostics and Quality Assurance methodologies.</p>
-                </div>
-                <div class="detail-box">
-                    <h3>Global Vision</h3>
-                    <p>My goal is to contribute to global tech infrastructures, creating tools that make the digital world more accessible and stable for millions of users worldwide.</p>
-                </div>
-            </div>
+    <section class="hero">
+        <div class="pfp-container">
+            <img src="1776708958346.jpg" alt="Pranay Mahule">
         </div>
+        <h1>SOFTWARE<br><span style="color: var(--accent)">ENGINEER</span></h1>
+        <p style="color: #a1a1aa; max-width: 600px; margin-top: 1rem; font-size: 1.2rem;">Building high-performance systems and scalable full-stack applications.</p>
+        <a href="about.html" class="btn">VIEW BIOGRAPHY</a>
     </section>
-
-    <section id="education">
-        <div class="content-block">
-            <h2 class="page-title">University Profile</h2>
-            <p class="desc-text">A detailed record of my academic journey and institutional excellence.</p>
-            
-            <div class="edu-hero">
-                <img src="1749038381_row_206.jpg" alt="RTMNU Campus" class="edu-bg">
-                <div class="edu-details">
-                    <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem;">
-                        <img src="1698939571245.jpg" alt="Logo" style="width: 80px; height: 80px; background: white; padding: 5px; border-radius: 10px;">
-                        <div>
-                            <h2 style="font-size: 2rem;">Rashtrasant Tukadoji Maharaj Nagpur University</h2>
-                            <p style="color: var(--accent); font-weight: 700; letter-spacing: 2px;">GRADUATED CLASS OF 2026</p>
-                        </div>
-                    </div>
-                    <p style="font-size: 1.2rem; line-height: 1.6;">
-                        I have completed my <strong>Bachelor of Technology in Computer Software Engineering</strong> at this prestigious institution. During my time here, I was deeply involved in advanced technical workshops, software architecture seminars, and peer-led engineering projects.
-                    </p>
-                    <div class="detail-grid" style="margin-top: 2rem; gap: 1rem;">
-                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
-                            <h4 style="color: var(--accent);">Status</h4>
-                            <p>Completed Successfully</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
-                            <h4 style="color: var(--accent);">Specialization</h4>
-                            <p>Software Architecture & Systems</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
-                            <h4 style="color: var(--accent);">Key Focus</h4>
-                            <p>Full-Stack Implementation</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="content-block">
-            <h2 class="page-title">The Portfolio</h2>
-            <p class="desc-text">Deep-dive into my technical implementations and project lifecycle management.</p>
-            
-            <div class="info-card" style="background: var(--accent-soft); padding: 4rem; border-radius: 30px; margin-bottom: 3rem;">
-                <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Veg-Management System</h3>
-                <p class="desc-text">A complete commercial management system designed to handle high-frequency retail transactions and complex inventory tracking. Built using PHP and MySQL, this system ensures 100% data integrity and real-time reporting for business owners.</p>
-                <ul style="list-style: none; display: flex; gap: 1rem;">
-                    <li style="border: 1px solid var(--accent); padding: 0.5rem 1rem; border-radius: 10px;">Backend Architecture</li>
-                    <li style="border: 1px solid var(--accent); padding: 0.5rem 1rem; border-radius: 10px;">Database Design</li>
-                </ul>
-            </div>
-
-            <div class="info-card" style="background: rgba(255,255,255,0.03); padding: 4rem; border-radius: 30px;">
-                <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">TechFlow UI Framework</h3>
-                <p class="desc-text">An advanced frontend design system utilizing modern CSS variables and glass-morphism to provide an immersive tech experience. This project demonstrates my ability to create visually stunning interfaces without sacrificing load speeds or performance.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-full">
-        <div class="content-block" style="text-align: center;">
-            <h2 class="page-title" style="border: none; padding: 0;">Connect with Pranay</h2>
-            <p class="desc-text" style="margin: 0 auto 4rem auto;">Available for professional opportunities, technical consultations, and engineering collaborations.</p>
-            
-            <div class="contact-links">
-                <a href="mailto:pranaymahule759@gmail.com" class="social-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>pranaymahule759@gmail.com</p>
-                </a>
-                <a href="https://www.linkedin.com/in/pranay-mahule-018801291/" target="_blank" class="social-icon social-card">
-                    <i class="fab fa-linkedin"></i>
-                    <h3>LinkedIn</h3>
-                    <p>Professional Profile</p>
-                </a>
-                <a href="https://www.facebook.com/share/18VbnqZxmP/" target="_blank" class="social-icon social-card">
-                    <i class="fab fa-facebook"></i>
-                    <h3>Facebook</h3>
-                    <p>Social Presence</p>
-                </a>
-                <a href="https://github.com/PranayMahule" target="_blank" class="social-icon social-card">
-                    <i class="fab fa-github"></i>
-                    <h3>GitHub</h3>
-                    <p>Code Repositories</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2026 Pranay Mahule. All rights reserved. | Software Engineering Excellence
-    </footer>
-
 </body>
 </html>

@@ -3,161 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranay Mahule | Portfolio</title>
+    <title>Saloni Gupta | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #030014;
-            --purple: #7c3aed;
-            --purple-glow: rgba(124, 58, 237, 0.3);
-            --text: #ffffff;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
-            --glass: rgba(255, 255, 255, 0.03);
+            --lilac-bg: #f3e8ff;
+            --lilac-dark: #7e22ce;
+            --text-main: #1e1b4b;
+            --highlight: #faf5ff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
-
-        .glow {
-            position: fixed; width: 60vw; height: 60vw; background: var(--purple-glow);
-            filter: blur(120px); border-radius: 50%; z-index: -1; top: -10%; left: 50%; transform: translateX(-50%);
-        }
+        body { background-color: var(--lilac-bg); color: var(--text-main); scroll-behavior: smooth; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
         nav { display: flex; justify-content: center; padding: 2rem; position: fixed; top: 0; width: 100%; z-index: 100; }
         .nav-inner { 
-            background: rgba(3, 0, 20, 0.8); backdrop-filter: blur(12px); border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(126, 34, 206, 0.2);
             padding: 0.7rem 2.5rem; border-radius: 100px; display: flex; gap: 2rem;
         }
-        nav a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: var(--purple); }
+        nav a { color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: var(--lilac-dark); }
 
         #home { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .pfp { width: 180px; height: 180px; border-radius: 50%; border: 4px solid white; object-fit: cover; margin-bottom: 2rem; }
+
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--lilac-dark); }
         
-        /* Adjusted Photo to make face more visible */
-        .pfp-wrap { position: relative; margin-bottom: 2rem; }
-        .pfp { 
-            width: 220px; height: 220px; border-radius: 50%; 
-            border: 2px solid var(--purple); 
-            object-fit: cover; 
-            object-position: top; /* This helps show the face if the head is at the top of the image */
-            box-shadow: 0 0 50px var(--purple-glow);
+        section { padding: 6rem 0; }
+        .title { font-size: 2.2rem; text-align: center; margin-bottom: 3rem; color: var(--lilac-dark); }
+
+        /* Highlighted Education Section */
+        .education-highlight {
+            background: white;
+            padding: 3rem;
+            border-radius: 32px;
+            border: 2px solid var(--lilac-dark);
+            box-shadow: 0 15px 30px rgba(126, 34, 206, 0.1);
         }
 
-        h1 { font-size: clamp(3rem, 10vw, 5rem); font-weight: 800; letter-spacing: -3px; line-height: 1.1; margin-bottom: 1.5rem; }
-        .purple-text { background: linear-gradient(to bottom, #fff, var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .edu-item { margin-bottom: 2rem; }
+        .edu-item h3 { color: var(--lilac-dark); font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .edu-item p { font-size: 1.1rem; line-height: 1.6; }
 
-        section { padding: 8rem 0 2rem; }
-        .title { font-size: 2.5rem; text-align: center; margin-bottom: 4rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: white; padding: 2rem; border-radius: 24px; transition: 0.3s; }
 
-        /* Projects Section */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { 
-            background: var(--glass); border: 1px solid var(--border); padding: 2.5rem; 
-            border-radius: 24px; transition: 0.4s;
-        }
-        .card:hover { border-color: var(--purple); transform: translateY(-10px); background: rgba(124, 58, 237, 0.05); }
-        .tag { display: inline-block; padding: 4px 12px; background: rgba(124, 58, 237, 0.1); border: 1px solid var(--purple); border-radius: 100px; font-size: 0.75rem; margin-top: 1rem; color: #d8b4fe; }
-
-        /* College Section */
-        .college-card { background: var(--glass); border: 1px solid var(--border); border-radius: 32px; overflow: hidden; }
-        .campus-img { width: 100%; height: 350px; object-fit: cover; border-bottom: 1px solid var(--border); }
-        .college-body { padding: 3rem; display: flex; align-items: center; gap: 2.5rem; }
-        .uni-logo { width: 100px; height: 100px; border-radius: 12px; background: #fff; padding: 8px; flex-shrink: 0; }
-
-        /* Social bar */
-        .social-bar { display: flex; justify-content: center; gap: 1.5rem; margin-top: 4rem; }
+        .social-bar { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
         .social-icon { 
-            font-size: 1.5rem; color: var(--text-dim); border: 1px solid var(--border);
-            width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
-            border-radius: 50%; transition: 0.3s; text-decoration: none;
+            font-size: 1.5rem; color: var(--lilac-dark); border: 2px solid var(--lilac-dark);
+            width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; text-decoration: none;
         }
-        .social-icon:hover { color: white; border-color: var(--purple); background: var(--purple); transform: scale(1.1); }
 
-        footer { padding: 4rem; text-align: center; color: #222; font-size: 0.8rem; }
-
-        @media (max-width: 768px) {
-            .college-body { flex-direction: column; text-align: center; }
-            h1 { font-size: 3rem; }
-        }
+        footer { padding: 3rem; text-align: center; opacity: 0.6; }
     </style>
 </head>
 <body>
 
-    <div class="glow"></div>
-
     <nav>
         <div class="nav-inner">
             <a href="#home">Home</a>
-            <a href="#projects">Work</a>
-            <a href="#college">College</a>
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <div class="container">
         <section id="home">
-            <div class="pfp-wrap">
-                <img src="1776708958346.jpg" alt="Pranay Mahule" class="pfp">
-            </div>
-            <p style="color: var(--purple); font-weight: 700; letter-spacing: 3px; margin-bottom: 1rem;">SOFTWARE ENGINEER</p>
-            <h1>Pranay <span class="purple-text">Mahule</span></h1>
-            <p style="color: var(--text-dim); font-size: 1.1rem; max-width: 650px;">B.Tech in Computer Software Engineering. Specialized in Full-Stack development and high-precision software testing.</p>
+            <img src="1776708958346.jpg" alt="Saloni Gupta" class="pfp">
+            <h1>Saloni Gupta</h1>
+            <p style="font-size: 1.2rem;">Technical Writer | Original Content Specialist</p>
         </section>
 
-        <section id="projects">
-            <h2 class="title">Technical Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Veg-Management System</h3>
-                    <p>A full-stack retail management platform built with PHP and MySQL to streamline inventory and sales tracking.</p>
-                    <span class="tag">Full-Stack</span>
-                </div>
-                <div class="card">
-                    <h3>NeuraWeb AI</h3>
-                    <p>A futuristic AI-focused landing page featuring glass-morphism and advanced CSS animations for a modern web aesthetic.</p>
-                    <span class="tag">UI/UX Design</span>
-                </div>
-                <div class="card">
-                    <h3>Quality Assurance</h3>
-                    <p>Rigorous diagnostic testing and bug tracking for enterprise software to ensure 99.9% system stability.</p>
-                    <span class="tag">Software Testing</span>
-                </div>
+        <section id="about">
+            <h2 class="title">About Me</h2>
+            <div class="card" style="text-align: center;">
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Main **Delhi University** se **Bachelor of Arts (Honours) in English** kar rahi hoon[cite: 8, 9]. 
+                    Iske saath hi, main **Guru Gobind Singh Indraprastha University** se **Bachelor of Technology in Electronics & Communication** ki padhai bhi kar rahi hoon[cite: 11, 12]. 
+                    Technical knowledge aur creative writing ke is mel se main complex data ko asaan bhasha mein badalne mein mahir hoon.
+                </p>
             </div>
         </section>
 
-        <section id="college">
+        <section id="education">
             <h2 class="title">My Education</h2>
-            <div class="college-card">
-                <img src="1749038381_row_206.jpg" alt="RTMNU Campus" class="campus-img">
-                <div class="college-body">
-                    <img src="1698939571245.jpg" alt="RTMNU Logo" class="uni-logo">
-                    <div>
-                        <h3 style="color: var(--purple); font-size: 1.8rem; margin-bottom: 0.5rem;">Rashtrasant Tukadoji Maharaj Nagpur University</h3>
-                        <p style="font-weight: 600; margin-bottom: 0.5rem;">B.Tech in Computer Software Engineering</p>
-                        <p style="color: var(--text-dim);">Completed intensive coursework in software architecture and engineering methodologies at a leading technical institution.</p>
-                    </div>
+            <div class="education-highlight">
+                <div class="edu-item">
+                    <h3>Bachelor of Technology (B.Tech)</h3>
+                    <p><strong>Institute:</strong> Guru Gobind Singh Indraprastha University [cite: 12]</p>
+                    <p><strong>Specialization:</strong> Electronics & Communication Engineering [cite: 11]</p>
+                    <p><strong>Focus:</strong> Technical Writing, AI Fundamentals, and Problem Solving[cite: 13].</p>
                 </div>
+                <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 2rem;">
+                <div class="edu-item">
+                    <h3>Bachelor of Arts (B.A. Hons)</h3>
+                    <p><strong>College:</strong> School of Open Learning, Delhi University [cite: 9]</p>
+                    <p><strong>Major:</strong> English [cite: 8]</p>
+                    <p><strong>Focus:</strong> Advanced Writing, Grammar & Editing, and Narrative Analysis[cite: 10].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="work">
+            <h2 class="title">Featured Project</h2>
+            <div class="card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                <h3>TechFlow UI – Modern Tech Landing Design</h3>
+                <p style="text-align: center;">Ek sleek aur dark-themed concept jo modern startups ke liye design kiya gaya hai. Isme glowing visuals aur immersive interface ka istemal hua hai.</p>
             </div>
         </section>
 
         <section id="contact" style="text-align: center;">
-            <h2 class="title">Get In Touch</h2>
-            <a href="mailto:pranaymahule759@gmail.com" style="font-size: 2rem; color: #fff; text-decoration: none; font-weight: 700; transition: 0.3s;">pranaymahule759@gmail.com</a>
-            
+            <h2 class="title">Contact Me</h2>
+            <p>Sg405422@gmail.com [cite: 2]</p>
             <div class="social-bar">
-                <a href="https://www.linkedin.com/in/pranay-mahule-018801291/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://wa.me/917559497704" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/share/18VbnqZxmP/?mibextid=wwXIfr" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://github.com/PranayMahule" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/saloni-gupta-b38497243/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/share/18VbnqZxmP/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/salonigupta2004" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
             </div>
         </section>
     </div>
 
-    <footer style="padding: 4rem; text-align: center; color: #222; font-size: 0.8rem; border-top: 1px solid var(--border);">
-        &copy; 2026 Pranay Mahule. All Rights Reserved.
+    <footer>
+        &copy; 2026 Saloni Gupta.
     </footer>
 
 </body>

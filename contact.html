@@ -6,28 +6,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { --bg: #050505; --accent: #7c3aed; --text: #ffffff; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; text-align: center; }
-        nav { padding: 2rem 5%; display: flex; justify-content: space-between; }
-        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 2rem; }
-        .contact-wrap { padding: 10rem 5%; }
-        h1 { font-size: 4rem; margin-bottom: 4rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .card { background: #111; padding: 3rem; border-radius: 30px; text-decoration: none; color: white; border: 1px solid #222; }
-        .card:hover { border-color: var(--accent); background: #161616; }
-        .card i { font-size: 3rem; color: var(--accent); margin-bottom: 1rem; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+        nav { padding: 2rem 10%; display: flex; justify-content: space-between; }
+        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 3rem; font-weight: 600; }
+        
+        .main-contact { flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 10%; }
+        h1 { font-size: 5rem; font-weight: 900; margin-bottom: 4rem; }
+        
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; width: 100%; max-width: 1200px; }
+        .contact-card { background: #0c0c0c; border: 1px solid #222; padding: 4rem; border-radius: 40px; text-decoration: none; color: white; transition: 0.4s; text-align: center; }
+        .contact-card:hover { border-color: var(--accent); background: #111; transform: translateY(-10px); }
+        .contact-card i { font-size: 3.5rem; color: var(--accent); margin-bottom: 2rem; }
+        .contact-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .contact-card p { color: #a1a1aa; font-size: 1.1rem; }
     </style>
 </head>
 <body>
     <nav>
-        <div style="font-weight: 800; color: var(--accent);">PRANAY MAHULE</div>
-        <div class="nav-links"><a href="index.html">HOME</a><a href="about.html">BIOGRAPHY</a><a href="education.html">COLLEGE</a><a href="contact.html">CONTACT</a></div>
+        <div style="font-weight: 900; font-size: 1.5rem;">PRANAY<span style="color:var(--accent)">.</span></div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">BIOGRAPHY</a>
+            <a href="education.html">COLLEGE</a>
+            <a href="contact.html" style="color:white">CONTACT</a>
+        </div>
     </nav>
-    <div class="contact-wrap">
-        <h1>Get In Touch</h1>
-        <div class="grid">
-            <a href="mailto:pranaymahule759@gmail.com" class="card"><i class="fas fa-envelope"></i><h3>Email</h3><p>pranaymahule759@gmail.com</p></a>
-            <a href="https://www.linkedin.com/in/pranay-mahule-018801291/" target="_blank" class="card"><i class="fab fa-linkedin"></i><h3>LinkedIn</h3><p>Professional Profile</p></a>
-            <a href="https://www.facebook.com/share/18VbnqZxmP/" target="_blank" class="card"><i class="fab fa-facebook"></i><h3>Facebook</h3><p>Social Presence</p></a>
+    <div class="main-contact">
+        <h1>Let's Build.</h1>
+        <div class="contact-grid">
+            <a href="mailto:pranaymahule759@gmail.com" class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>GMAIL</h3>
+                <p>pranaymahule759@gmail.com</p>
+            </a>
+            <a href="https://www.linkedin.com/in/pranay-mahule-018801291/" target="_blank" class="contact-card">
+                <i class="fab fa-linkedin"></i>
+                <h3>LINKEDIN</h3>
+                <p>Professional Network</p>
+            </a>
+            <a href="https://www.facebook.com/share/18VbnqZxmP/" target="_blank" class="contact-card">
+                <i class="fab fa-facebook"></i>
+                <h3>FACEBOOK</h3>
+                <p>Social Presence</p>
+            </a>
         </div>
     </div>
 </body>

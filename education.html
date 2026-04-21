@@ -2,52 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>College | Pranay Mahule</title>
+    <title>Education | Pranay Mahule</title>
     <style>
         :root { --bg: #050505; --accent: #7c3aed; --text: #ffffff; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
-        nav { padding: 2rem 5%; display: flex; justify-content: space-between; }
-        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 2rem; }
+        nav { padding: 2rem 10%; display: flex; justify-content: space-between; }
+        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 3rem; font-weight: 600; }
         
-        .full-college { position: relative; height: 600px; margin: 4rem 5%; border-radius: 40px; overflow: hidden; }
-        .full-college img { width: 100%; height: 100%; object-fit: cover; }
-        .overlay { position: absolute; bottom: 0; width: 100%; background: linear-gradient(transparent, black); padding: 4rem; }
+        .college-hero { position: relative; height: 75vh; margin: 2rem 5%; border-radius: 50px; overflow: hidden; }
+        .college-hero img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); }
+        .hero-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 5rem; background: linear-gradient(transparent, #050505); }
         
-        .edu-info { padding: 0 10% 10rem; }
-        h1 { font-size: 3.5rem; margin-bottom: 2rem; }
-        .detail-card { background: #111; padding: 4rem; border-radius: 30px; border: 1px solid #222; }
+        .edu-content { max-width: 1100px; margin: 0 auto; padding: 6rem 5%; }
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+        .info-block h2 { font-size: 3rem; margin-bottom: 2rem; color: var(--accent); }
+        .info-block p { font-size: 1.3rem; line-height: 1.8; color: #d4d4d8; margin-bottom: 2rem; }
+        
+        .stat-box { background: #111; padding: 3rem; border-radius: 30px; border: 1px solid #222; margin-top: 2rem; }
+        .stat-box h4 { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
     </style>
 </head>
 <body>
     <nav>
-        <div style="font-weight: 800; color: var(--accent);">PRANAY MAHULE</div>
+        <div style="font-weight: 900; font-size: 1.5rem;">PRANAY<span style="color:var(--accent)">.</span></div>
         <div class="nav-links">
             <a href="index.html">HOME</a>
             <a href="about.html">BIOGRAPHY</a>
-            <a href="education.html" style="color: white;">COLLEGE</a>
+            <a href="education.html" style="color:white">COLLEGE</a>
             <a href="contact.html">CONTACT</a>
         </div>
     </nav>
 
-    <div class="full-college">
-        <img src="1749038381_row_206.jpg" alt="College Campus">
-        <div class="overlay">
-            <h2 style="font-size: 3rem;">Rashtrasant Tukadoji Maharaj Nagpur University</h2>
-            <p style="color: var(--accent); font-weight: 700;">GRADUATED CLASS OF 2026</p>
+    <div class="college-hero">
+        <img src="1749038381_row_206.jpg" alt="University Campus">
+        <div class="hero-overlay">
+            <h1 style="font-size: 4rem; font-weight: 900;">Academic Excellence</h1>
+            <p style="font-size: 1.5rem; color: #a1a1aa;">Rashtrasant Tukadoji Maharaj Nagpur University</p>
         </div>
     </div>
 
-    <div class="edu-info">
-        <div class="detail-card">
-            <h1>Bachelor of Technology</h1>
-            <p style="font-size: 1.5rem; color: #a1a1aa; line-height: 1.8;">
-                Pranay completed his <strong>Bachelor of Technology in Computer Software Engineering</strong> at RTMNU. His academic career was marked by excellence in Software Architecture and advanced Database Systems.
-            </p>
-            <div style="margin-top: 3rem; display: flex; gap: 4rem;">
-                <img src="1698939571245.jpg" style="width: 150px; background: white; padding: 10px; border-radius: 20px;">
-                <div>
-                    <h3 style="margin-bottom: 1rem;">Institutional Training</h3>
-                    <p style="color: #a1a1aa;">Completed high-intensity professional training in full-stack implementation and automated diagnostic testing protocols.</p>
+    <div class="edu-content">
+        <div class="edu-grid">
+            <div class="info-block">
+                <h2>The Degree</h2>
+                <p>Pranay Mahule earned his <strong>Bachelor of Technology in Computer Software Engineering</strong> from RTMNU, a degree that provided the mathematical and logical foundation for his engineering career.</p>
+                <p>His curriculum focused heavily on Advanced Algorithms, Operating Systems, and Distributed Computing. During his final years, he specialized in Software Architecture—learning how to design systems that can support thousands of concurrent users without failure.</p>
+            </div>
+            <div class="info-block">
+                <div class="stat-box">
+                    <h4>Current Status</h4>
+                    <p style="font-size: 1.8rem; font-weight: 800; color: #fff;">COMPLETED</p>
+                    <hr style="border: 0; border-top: 1px solid #333; margin: 1.5rem 0;">
+                    <h4>Core Training</h4>
+                    <p>Completed professional institutional training in Full-Stack Web Deployment, focusing on MySQL Database optimization and PHP server security.</p>
+                </div>
+                <div style="margin-top: 3rem; text-align: center;">
+                    <img src="1698939571245.jpg" style="width: 140px; background: white; padding: 10px; border-radius: 20px; box-shadow: 0 0 30px rgba(255,255,255,0.1);">
                 </div>
             </div>
         </div>

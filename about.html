@@ -4,55 +4,41 @@
     <meta charset="UTF-8">
     <title>Biography | Pranay Mahule</title>
     <style>
-        :root { --bg: #050505; --accent: #7c3aed; --text: #ffffff; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.8; }
-        nav { padding: 2rem 10%; display: flex; justify-content: space-between; position: sticky; top: 0; background: rgba(5,5,5,0.9); backdrop-filter: blur(10px); z-index: 10; }
-        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 3rem; font-weight: 600; }
-        
-        .container { max-width: 1000px; margin: 0 auto; padding: 6rem 5%; }
-        h1 { font-size: 4.5rem; font-weight: 900; margin-bottom: 3rem; border-bottom: 5px solid var(--accent); display: inline-block; }
-        
-        .bio-section { margin-bottom: 5rem; }
-        .bio-section h2 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
-        .bio-section p { font-size: 1.25rem; color: #d4d4d8; margin-bottom: 1.5rem; text-align: justify; }
-        
-        .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
-        .expert-card { background: #111; padding: 3rem; border-radius: 24px; border: 1px solid #222; }
-        .expert-card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--accent); }
+        :root { --bg: #030303; --accent: #7c3aed; --text: #ffffff; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.9; }
+        nav { padding: 2.5rem 10%; display: flex; justify-content: space-between; position: fixed; width: 100%; top: 0; background: rgba(3,3,3,0.8); backdrop-filter: blur(20px); z-index: 100; }
+        .nav-links a { color: #71717a; text-decoration: none; margin-left: 3rem; font-weight: 700; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 12rem 5%; }
+        h1 { font-size: 6rem; font-weight: 900; letter-spacing: -4px; color: var(--accent); margin-bottom: 4rem; }
+        .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
+        .bio-text { font-size: 1.3rem; color: #d4d4d8; text-align: justify; }
+        .skill-card { background: #0c0c0c; border: 1px solid #1a1a1a; padding: 4rem; border-radius: 40px; margin-top: 6rem; }
+        .skill-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+        .skill-item { background: #161616; padding: 1.5rem; border-radius: 15px; border-left: 4px solid var(--accent); font-weight: 700; }
     </style>
 </head>
 <body>
     <nav>
-        <div style="font-weight: 900; font-size: 1.5rem;">PRANAY<span style="color:var(--accent)">.</span></div>
-        <div class="nav-links">
-            <a href="index.html">HOME</a>
-            <a href="about.html" style="color:white">BIOGRAPHY</a>
-            <a href="education.html">COLLEGE</a>
-            <a href="contact.html">CONTACT</a>
-        </div>
+        <div style="font-weight: 900; font-size: 1.5rem;">PRANAY<span style="color:var(--accent)">_</span></div>
+        <div class="nav-links"><a href="index.html">HOME</a><a href="about.html" style="color:white">BIOGRAPHY</a><a href="work.html">PROJECTS</a><a href="contact.html">CONTACT</a></div>
     </nav>
     <div class="container">
-        <section class="bio-section">
-            <h1>Biography</h1>
-            <p>Pranay Mahule is a highly analytical Software Engineer with a specialized focus on building end-to-end digital infrastructures. With a background rooted in Computer Software Engineering, he has dedicated his career to mastering the complexities of full-stack development, from low-level server logic to immersive high-fidelity user interfaces.</p>
-            <p>His professional philosophy revolves around "Precision Engineering"—the belief that software should be architected with long-term scalability and security as the primary metrics of success. By combining rigorous testing protocols with modern development frameworks, Pranay ensures that every product he builds is capable of handling enterprise-level traffic while maintaining a flawless user journey.</p>
-        </section>
-
-        <section class="bio-section">
-            <h2>Technical Vision</h2>
-            <p>Beyond standard development, Pranay is deeply invested in Software Diagnostics. This involves creating automated scripts and testing modules that proactively identify system vulnerabilities and performance bottlenecks before they reach the end-user. His work in database management using MySQL and backend development with PHP has allowed him to build systems that are both data-efficient and lightning-fast.</p>
-            
-            <div class="expertise-grid">
-                <div class="expert-card">
-                    <h3>Full-Stack Mastery</h3>
-                    <p>Comprehensive knowledge of the entire development lifecycle, ensuring seamless communication between the client-side and server-side components.</p>
-                </div>
-                <div class="expert-card">
-                    <h3>Diagnostic Logic</h3>
-                    <p>Implementing advanced debugging and system health monitoring to ensure 99.9% application uptime and performance stability.</p>
-                </div>
+        <h1>Biography.</h1>
+        <div class="bio-grid">
+            <p class="bio-text">Pranay Mahule is a solution-oriented Software Engineer with a specialized focus on building end-to-end digital infrastructures. His professional journey is defined by a rigorous approach to software development, ensuring that every line of code serves a specific, optimized purpose. He views software as a living architecture, prioritizing efficiency, security, and scalability above all else.</p>
+            <p class="bio-text">Beyond technical execution, he is a strategic thinker who views software as a tool for global transformation. He remains committed to staying at the forefront of AI integration and system security to provide users with tools that are as safe as they are powerful. His work in Software Diagnostics proactive identifies system vulnerabilities before they reach the end-user.</p>
+        </div>
+        <div class="skill-card">
+            <h2 style="font-size: 3rem;">Technical Expertise</h2>
+            <div class="skill-list">
+                <div class="skill-item">Full-Stack Development</div>
+                <div class="skill-item">Database Architecture</div>
+                <div class="skill-item">System Diagnostics</div>
+                <div class="skill-item">PHP & Node.js</div>
+                <div class="skill-item">MySQL Management</div>
+                <div class="skill-item">UI/UX Engineering</div>
             </div>
-        </section>
+        </div>
     </div>
 </body>
 </html>

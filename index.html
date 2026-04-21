@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranay Mahule | Full-Stack Portfolio</title>
+    <title>Pranay Mahule | Full-Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -24,61 +24,55 @@
             filter: blur(120px); border-radius: 50%; z-index: -1; top: -10%; left: 50%; transform: translateX(-50%);
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
         nav { display: flex; justify-content: center; padding: 2rem; position: fixed; top: 0; width: 100%; z-index: 100; }
         .nav-inner { 
             background: rgba(3, 0, 20, 0.8); backdrop-filter: blur(12px); border: 1px solid var(--border);
-            padding: 0.6rem 2.5rem; border-radius: 100px; display: flex; gap: 2rem;
+            padding: 0.7rem 2.5rem; border-radius: 100px; display: flex; gap: 2rem;
         }
         nav a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { color: var(--purple); }
 
-        #home { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        #home { min-height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 100px; }
         
-        /* Developer Icon instead of hidden face photo */
-        .dev-icon { 
-            font-size: 5rem; color: var(--purple); margin-bottom: 2rem;
-            filter: drop-shadow(0 0 20px var(--purple));
-        }
-
-        h1 { font-size: clamp(3rem, 10vw, 5rem); font-weight: 800; letter-spacing: -3px; line-height: 1.1; margin-bottom: 1.5rem; }
+        h1 { font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 800; letter-spacing: -3px; line-height: 1.1; margin-bottom: 1.5rem; }
         .purple-text { background: linear-gradient(to bottom, #fff, var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        section { padding: 6rem 0; }
-        .title { font-size: 2.2rem; text-align: center; margin-bottom: 4rem; }
+        section { padding: 8rem 0 4rem; }
+        .title { font-size: 2.5rem; text-align: center; margin-bottom: 4rem; letter-spacing: -1px; }
 
-        /* Project Cards */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        /* Project Cards Styling */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
         .project-card { 
-            background: var(--glass); border: 1px solid var(--border); border-radius: 24px; 
-            padding: 2rem; transition: 0.3s ease; position: relative; overflow: hidden;
+            background: var(--glass); border: 1px solid var(--border); border-radius: 28px; 
+            padding: 2.5rem; transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1); position: relative;
         }
-        .project-card:hover { border-color: var(--purple); transform: translateY(-5px); }
-        .project-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .project-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
-        .tag { display: inline-block; padding: 4px 12px; background: rgba(124, 58, 237, 0.1); border: 1px solid var(--purple); border-radius: 100px; font-size: 0.7rem; margin-top: 1.5rem; }
+        .project-card:hover { border-color: var(--purple); transform: translateY(-10px); background: rgba(124, 58, 237, 0.05); }
+        .project-card h3 { font-size: 1.6rem; margin-bottom: 1rem; }
+        .project-card p { color: var(--text-dim); font-size: 1rem; line-height: 1.6; }
+        .tag { display: inline-block; padding: 5px 14px; background: rgba(124, 58, 237, 0.1); border: 1px solid var(--purple); border-radius: 100px; font-size: 0.75rem; margin-top: 1.5rem; color: #d8b4fe; }
 
         /* College Section */
-        .college-card { background: var(--glass); border: 1px solid var(--border); border-radius: 32px; overflow: hidden; }
-        .campus-img { width: 100%; height: 300px; object-fit: cover; }
-        .college-body { padding: 2.5rem; display: flex; align-items: center; gap: 2rem; }
-        .uni-logo { width: 90px; height: 90px; border-radius: 12px; background: #fff; padding: 5px; }
+        .college-card { background: var(--glass); border: 1px solid var(--border); border-radius: 32px; overflow: hidden; max-width: 900px; margin: 0 auto; }
+        .campus-img { width: 100%; height: 350px; object-fit: cover; border-bottom: 1px solid var(--border); }
+        .college-body { padding: 3rem; display: flex; align-items: center; gap: 2.5rem; }
+        .uni-logo { width: 110px; height: 110px; border-radius: 16px; background: #fff; padding: 10px; flex-shrink: 0; }
 
         /* Social bar */
         .social-bar { display: flex; justify-content: center; gap: 1.5rem; margin-top: 4rem; }
         .social-icon { 
             font-size: 1.5rem; color: var(--text-dim); border: 1px solid var(--border);
-            width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
+            width: 65px; height: 65px; display: flex; align-items: center; justify-content: center;
             border-radius: 50%; transition: 0.3s; text-decoration: none;
         }
-        .social-icon:hover { color: white; border-color: var(--purple); background: var(--purple); transform: scale(1.1); }
+        .social-icon:hover { color: white; border-color: var(--purple); background: var(--purple); transform: scale(1.1); box-shadow: 0 0 20px var(--purple-glow); }
 
-        footer { padding: 4rem; text-align: center; color: #222; font-size: 0.8rem; }
+        footer { padding: 5rem; text-align: center; color: #334155; font-size: 0.85rem; border-top: 1px solid var(--border); }
 
         @media (max-width: 768px) {
             .college-body { flex-direction: column; text-align: center; }
-            h1 { font-size: 3rem; }
+            h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
@@ -89,7 +83,7 @@
     <nav>
         <div class="nav-inner">
             <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
+            <a href="#projects">Work</a>
             <a href="#college">Education</a>
             <a href="#contact">Contact</a>
         </div>
@@ -97,29 +91,28 @@
 
     <div class="container">
         <section id="home">
-            <div class="dev-icon"><i class="fas fa-laptop-code"></i></div>
-            <p style="color: var(--purple); font-weight: 700; letter-spacing: 3px; margin-bottom: 1rem;">FULL STACK ENGINEER</p>
-            <h1>Pranay <span class="purple-text">Mahule</span></h1>
-            <p style="color: var(--text-dim); font-size: 1.1rem; max-width: 600px;">B.Tech in Computer Software Engineering student at RTMNU, specializing in high-performance web development and QA testing.</p>
+            <p style="color: var(--purple); font-weight: 700; letter-spacing: 4px; margin-bottom: 1.5rem;">B.TECH COMPUTER SCIENCE</p>
+            <h1>Pranay <br><span class="purple-text">Mahule</span></h1>
+            <p style="color: var(--text-dim); font-size: 1.25rem; max-width: 700px; line-height: 1.6;">Full-Stack Developer and Software Engineer specializing in scalable web systems and high-precision software testing.</p>
         </section>
 
         <section id="projects">
-            <h2 class="title">Featured Projects</h2>
+            <h2 class="title">Technical Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
+                    <h3>Veg-Management System</h3>
+                    <p>A comprehensive full-stack platform built with PHP and MySQL to manage retail inventory and sales processing with high efficiency.</p>
+                    <span class="tag">PHP & MySQL</span>
+                </div>
+                <div class="project-card">
                     <h3>NeuraWeb AI</h3>
-                    <p>A futuristic AI website landing design built with a focus on immersive UI/UX, glowing neon visuals, and a dynamic layout for tech-forward companies.</p>
-                    <span class="tag">UI/UX Design</span>
+                    <p>Futuristic landing page concept focusing on glass-morphism and high-end UI/UX designs for next-generation AI platforms.</p>
+                    <span class="tag">Figma & UI/UX</span>
                 </div>
                 <div class="project-card">
-                    <h3>Veg-Management</h3>
-                    <p>A robust management system built using PHP and MySQL. Developed to handle inventory, sales, and retail logic with real-time database updates.</p>
-                    <span class="tag">Full-Stack Development</span>
-                </div>
-                <div class="project-card">
-                    <h3>Software Diagnostics</h3>
-                    <p>Explored various quality assurance methodologies, focusing on bug identification and system performance for enterprise applications.</p>
-                    <span class="tag">QA Testing</span>
+                    <h3>Quality Assurance</h3>
+                    <p>Implementation of rigorous testing methodologies to ensure software stability and diagnostic accuracy in complex environments.</p>
+                    <span class="tag">Software Testing</span>
                 </div>
             </div>
         </section>
@@ -131,28 +124,38 @@
                 <div class="college-body">
                     <img src="1698939571245.jpg" alt="RTMNU Logo" class="uni-logo">
                     <div>
-                        <h3 style="color: var(--purple); font-size: 1.6rem; margin-bottom: 0.5rem;">Rashtrasant Tukadoji Maharaj Nagpur University</h3>
-                        <p style="font-weight: 600; margin-bottom: 0.5rem;">B.Tech in Computer Software Engineering</p>
-                        <p style="color: var(--text-dim);">Studying advanced software architecture and diagnostic methodologies at a leading technical institution.</p>
+                        <h3 style="color: var(--purple); font-size: 1.8rem; margin-bottom: 0.5rem;">Rashtrasant Tukadoji Maharaj Nagpur University</h3>
+                        <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;">Bachelor of Technology in Computer Software Engineering</p>
+                        <p style="color: var(--text-dim);">Focusing on software architecture and advanced engineering principles at one of the region's top technical universities.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" style="text-align: center;">
-            <h2 class="title">Get In Touch</h2>
-            <a href="mailto:pranaymahule759@gmail.com" style="font-size: 2rem; color: #fff; text-decoration: none; font-weight: 700; transition: 0.3s;">pranaymahule759@gmail.com</a>
+            <h2 class="title">Let's Connect</h2>
+            <a href="mailto:pranaymahule759@gmail.com" style="font-size: 2.2rem; color: #fff; text-decoration: none; font-weight: 800; transition: 0.3s; display: block; margin-bottom: 1rem;">pranaymahule759@gmail.com</a>
+            <p style="color: var(--text-dim);">Available for software engineering roles and creative collaborations.</p>
             
             <div class="social-bar">
-                <a href="https://www.linkedin.com/in/pranay-mahule-018801291/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://wa.me/917559497704" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://github.com/PranayMahule" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/pranay-mahule-018801291/" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/917559497704" target="_blank" class="social-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.facebook.com/share/18VbnqZxmP/?mibextid=wwXIfr" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://github.com/PranayMahule" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
         </section>
     </div>
 
     <footer>
-        &copy; 2026 Pranay Mahule. All rights reserved.
+        &copy; 2026 Pranay Mahule. Designed & Built with Precision.
     </footer>
 
 </body>

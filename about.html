@@ -2,46 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About | Pranay Mahule</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Biography | Pranay Mahule</title>
     <style>
         :root { --bg: #050505; --accent: #7c3aed; --text: #ffffff; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; padding-top: 80px; }
-        nav { position: fixed; top: 0; width: 100%; padding: 2rem 5%; display: flex; justify-content: space-between; background: #050505; }
-        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 2rem; }
-        .content { max-width: 1000px; margin: 0 auto; padding: 4rem 5%; }
-        h1 { font-size: 4rem; color: var(--accent); margin-bottom: 2rem; }
-        p { font-size: 1.4rem; line-height: 1.8; color: #d4d4d8; margin-bottom: 2rem; }
-        .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem; }
-        .skill-box { border-left: 4px solid var(--accent); padding-left: 2rem; }
-        .skill-box h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.8; }
+        nav { padding: 2rem 10%; display: flex; justify-content: space-between; position: sticky; top: 0; background: rgba(5,5,5,0.9); backdrop-filter: blur(10px); z-index: 10; }
+        .nav-links a { color: #a1a1aa; text-decoration: none; margin-left: 3rem; font-weight: 600; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 6rem 5%; }
+        h1 { font-size: 4.5rem; font-weight: 900; margin-bottom: 3rem; border-bottom: 5px solid var(--accent); display: inline-block; }
+        
+        .bio-section { margin-bottom: 5rem; }
+        .bio-section h2 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
+        .bio-section p { font-size: 1.25rem; color: #d4d4d8; margin-bottom: 1.5rem; text-align: justify; }
+        
+        .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
+        .expert-card { background: #111; padding: 3rem; border-radius: 24px; border: 1px solid #222; }
+        .expert-card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--accent); }
     </style>
 </head>
 <body>
     <nav>
-        <div style="font-weight: 800; color: var(--accent);">PRANAY MAHULE</div>
+        <div style="font-weight: 900; font-size: 1.5rem;">PRANAY<span style="color:var(--accent)">.</span></div>
         <div class="nav-links">
             <a href="index.html">HOME</a>
-            <a href="about.html" style="color: white;">BIOGRAPHY</a>
+            <a href="about.html" style="color:white">BIOGRAPHY</a>
             <a href="education.html">COLLEGE</a>
             <a href="contact.html">CONTACT</a>
         </div>
     </nav>
-    <div class="content">
-        <h1>Detailed Biography</h1>
-        <p>Pranay Mahule is a solution-oriented Software Engineer with a passion for architecting robust digital products. His journey is defined by a rigorous approach to software development, focusing on the intersection of user experience and backend efficiency.</p>
-        <p>Throughout his career, he has developed a unique expertise in <strong>Full-Stack Development</strong> and <strong>Software Diagnostics</strong>, ensuring that systems are not only functional but also secure and highly scalable for long-term growth.</p>
-        
-        <div class="skill-grid">
-            <div class="skill-box">
-                <h3>Backend Architecture</h3>
-                <p>Expertise in database schema design, server-side logic using PHP and Node.js, and complex system integrations.</p>
+    <div class="container">
+        <section class="bio-section">
+            <h1>Biography</h1>
+            <p>Pranay Mahule is a highly analytical Software Engineer with a specialized focus on building end-to-end digital infrastructures. With a background rooted in Computer Software Engineering, he has dedicated his career to mastering the complexities of full-stack development, from low-level server logic to immersive high-fidelity user interfaces.</p>
+            <p>His professional philosophy revolves around "Precision Engineering"—the belief that software should be architected with long-term scalability and security as the primary metrics of success. By combining rigorous testing protocols with modern development frameworks, Pranay ensures that every product he builds is capable of handling enterprise-level traffic while maintaining a flawless user journey.</p>
+        </section>
+
+        <section class="bio-section">
+            <h2>Technical Vision</h2>
+            <p>Beyond standard development, Pranay is deeply invested in Software Diagnostics. This involves creating automated scripts and testing modules that proactively identify system vulnerabilities and performance bottlenecks before they reach the end-user. His work in database management using MySQL and backend development with PHP has allowed him to build systems that are both data-efficient and lightning-fast.</p>
+            
+            <div class="expertise-grid">
+                <div class="expert-card">
+                    <h3>Full-Stack Mastery</h3>
+                    <p>Comprehensive knowledge of the entire development lifecycle, ensuring seamless communication between the client-side and server-side components.</p>
+                </div>
+                <div class="expert-card">
+                    <h3>Diagnostic Logic</h3>
+                    <p>Implementing advanced debugging and system health monitoring to ensure 99.9% application uptime and performance stability.</p>
+                </div>
             </div>
-            <div class="skill-box">
-                <h3>Frontend Engineering</h3>
-                <p>Building immersive, responsive interfaces with modern CSS frameworks and JavaScript to provide seamless user journeys.</p>
-            </div>
-        </div>
+        </section>
     </div>
 </body>
 </html>

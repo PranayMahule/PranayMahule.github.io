@@ -1,1 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Pranay Mahule</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050507;
+            --surface: #0d0d12;
+            --accent: #7c3aed;
+            --accent-glow: rgba(124, 58, 237, 0.25);
+            --accent2: #06b6d4;
+            --text: #f0f0f5;
+            --muted: #52525b;
+            --border: rgba(255,255,255,0.06);
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(124,58,237,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124,58,237,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Glow effect centered */
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            background: rgba(5,5,7,0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--text);
+        }
+        .logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 0.25rem; }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text);
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* Main content */
+        main {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 8% 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .page-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .connect-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 900;
+            letter-spacing: -4px;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+        }
+        .connect-title .outline {
+            -webkit-text-stroke: 2px rgba(255,255,255,0.15);
+            color: transparent;
+        }
+
+        .connect-sub {
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 440px;
+            line-height: 1.7;
+            margin-bottom: 4rem;
+        }
+
+        /* Contact cards */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 5rem;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            group: true;
+        }
+        .contact-card:hover {
+            border-color: rgba(124,58,237,0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px var(--accent-glow);
+        }
+
+        .cc-icon {
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .cc-icon.email { background: rgba(124,58,237,0.15); }
+        .cc-icon.linkedin { background: rgba(6,182,212,0.15); }
+        .cc-icon.github { background: rgba(255,255,255,0.06); }
+
+        .cc-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--muted);
+        }
+        .cc-value {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--text);
+            word-break: break-word;
+        }
+        .cc-arrow {
+            margin-top: auto;
+            font-size: 1.2rem;
+            color: var(--muted);
+            transition: all 0.3s;
+        }
+        .contact-card:hover .cc-arrow {
+            color: var(--accent);
+            transform: translate(4px, -4px);
+        }
+
+        /* Footer note */
+        .footer-note {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .fn-left {
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+        .fn-right {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">PRANAY<span>_</span></div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="education.html">EDUCATION</a>
+            <a href="contact.html" class="active">CONTACT</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-label">03 — CONTACT</div>
+        <h1 class="connect-title">
+            Let's<br>
+            <span class="outline">Connect</span>.
+        </h1>
+        <p class="connect-sub">Whether you have a project in mind, want to collaborate, or just say hello — I'm always open to a conversation.</p>
+
+        <div class="contact-grid">
+            <a href="mailto:pranaymahule759@gmail.com" class="contact-card">
+                <div class="cc-icon email">✉️</div>
+                <div class="cc-label">EMAIL</div>
+                <div class="cc-value">pranaymahule759@gmail.com</div>
+                <div class="cc-arrow">↗</div>
+            </a>
+            <a href="https://linkedin.com/in/pranay-mahule-018801291/" target="_blank" class="contact-card">
+                <div class="cc-icon linkedin">💼</div>
+                <div class="cc-label">LINKEDIN</div>
+                <div class="cc-value">pranay-mahule-018801291</div>
+                <div class="cc-arrow">↗</div>
+            </a>
+            <a href="https://github.com/PranayMahule" target="_blank" class="contact-card">
+                <div class="cc-icon github">🐙</div>
+                <div class="cc-label">GITHUB</div>
+                <div class="cc-value">PranayMahule</div>
+                <div class="cc-arrow">↗</div>
+            </a>
+        </div>
+
+        <div class="footer-note">
+            <div class="fn-left">Based in India &nbsp;·&nbsp; Open to remote & on-site opportunities</div>
+            <div class="fn-right">© 2025 PRANAY MAHULE</div>
+        </div>
+    </main>
+</body>
+</html>

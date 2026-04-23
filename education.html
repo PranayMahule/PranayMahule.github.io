@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education | Pranay Mahule</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&family=Lora:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #050507;
@@ -23,7 +23,7 @@
         body {
             background: var(--bg);
             color: var(--text);
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Lora', serif;
             overflow-x: hidden;
         }
 
@@ -53,7 +53,7 @@
         }
 
         .logo {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 900;
             font-size: 1.4rem;
             color: var(--text);
@@ -64,7 +64,7 @@
         .nav-links a {
             color: var(--muted);
             text-decoration: none;
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 0.72rem;
             letter-spacing: 1.5px;
@@ -84,7 +84,7 @@
             border-bottom: 1px solid var(--border);
         }
         .page-label {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 3px;
@@ -92,7 +92,7 @@
             margin-bottom: 1.5rem;
         }
         .page-title {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: clamp(3.5rem, 8vw, 6rem);
             font-weight: 900;
             line-height: 0.95;
@@ -107,7 +107,7 @@
             padding: 5rem 8%;
         }
 
-        /* Hero image */
+        /* Campus banner */
         .campus-wrap {
             position: relative;
             margin-bottom: 4rem;
@@ -131,13 +131,12 @@
             align-items: center;
             padding: 4rem;
         }
-        .campus-text {}
         .campus-tag {
             display: inline-block;
             background: rgba(124,58,237,0.15);
             border: 1px solid rgba(124,58,237,0.3);
             color: var(--accent);
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 2px;
@@ -146,7 +145,7 @@
             margin-bottom: 1.5rem;
         }
         .campus-name {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 900;
             letter-spacing: -0.5px;
@@ -160,10 +159,6 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             padding: 3rem;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 3rem;
-            align-items: center;
             margin-bottom: 3rem;
             transition: border-color 0.3s;
         }
@@ -176,7 +171,7 @@
             background: rgba(124,58,237,0.1);
             border: 1px solid rgba(124,58,237,0.2);
             color: var(--accent);
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -185,51 +180,102 @@
             margin-bottom: 1.5rem;
         }
 
+        .degree-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+
         .degree-title {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             font-weight: 900;
             letter-spacing: -1.5px;
             color: var(--text);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
         .degree-sub {
+            font-family: 'Lora', serif;
             font-size: 1.1rem;
             color: #a1a1aa;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.3rem;
         }
         .degree-uni {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 1rem;
-            color: var(--text);
-            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--accent2);
+            margin-bottom: 0.25rem;
         }
-        .degree-desc {
-            color: var(--muted);
+        .degree-college {
+            font-family: 'Lora', serif;
             font-size: 0.9rem;
-            line-height: 1.6;
-            max-width: 500px;
+            color: var(--muted);
         }
 
-        .degree-logo-wrap {
-            width: 120px; height: 120px;
-            background: white;
-            border-radius: 20px;
-            padding: 12px;
+        /* Grade badge */
+        .grade-badge {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            background: rgba(124,58,237,0.1);
+            border: 2px solid rgba(124,58,237,0.3);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
             flex-shrink: 0;
+            min-width: 110px;
         }
-        .degree-logo-wrap img {
-            width: 100%; height: 100%;
-            object-fit: contain;
+        .grade-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .grade-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--muted);
+            margin-top: 0.4rem;
         }
 
-        /* Focus areas */
+        /* Info row */
+        .degree-info-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .info-chip {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 0.35rem 0.9rem;
+            font-family: 'Lora', serif;
+            font-size: 0.8rem;
+            color: #a1a1aa;
+        }
+        .info-chip span { color: var(--text); font-weight: 500; }
+
+        .degree-desc {
+            font-family: 'Lora', serif;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-width: 640px;
+        }
+
+        /* Certifications */
         .section-label {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 3px;
@@ -237,6 +283,43 @@
             margin-bottom: 1.5rem;
         }
 
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+        .cert-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        .cert-card:hover {
+            border-color: rgba(124,58,237,0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+        }
+        .cert-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+        }
+        .cert-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+        .cert-desc {
+            font-family: 'Lora', serif;
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Focus areas */
         .focus-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -254,7 +337,7 @@
             transform: translateY(-3px);
         }
         .focus-num {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 0.72rem;
             font-weight: 700;
             color: var(--accent);
@@ -262,16 +345,22 @@
             margin-bottom: 0.75rem;
         }
         .focus-title {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 800;
             font-size: 0.95rem;
             color: var(--text);
             margin-bottom: 0.5rem;
         }
         .focus-desc {
+            font-family: 'Lora', serif;
             font-size: 0.82rem;
             color: var(--muted);
             line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .cert-grid, .focus-grid { grid-template-columns: 1fr; }
+            .degree-header { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -303,25 +392,57 @@
             </div>
         </div>
 
+        <!-- Degree Card -->
         <div class="degree-card">
-            <div>
-                <div class="degree-badge">🎓 UNDERGRADUATE DEGREE</div>
-                <div class="degree-title">B.Tech</div>
-                <div class="degree-sub">Computer Software Engineering</div>
-                <div class="degree-uni">Rashtrasant Tukadoji Maharaj Nagpur University</div>
-                <p class="degree-desc">Specialized in distributed systems and high-level software architecture. Gained deep expertise across algorithms, system design, and modern software engineering practices.</p>
+            <div class="degree-badge">🎓 UNDERGRADUATE DEGREE</div>
+            <div class="degree-header">
+                <div>
+                    <div class="degree-title">B.Tech</div>
+                    <div class="degree-sub">Computer Software Engineering</div>
+                    <div class="degree-uni">Rashtrasant Tukadoji Maharaj Nagpur University (RTMNU)</div>
+                    <div class="degree-college">Nagarjuna Institute of Engineering Technology, Nagpur</div>
+                </div>
+                <div class="grade-badge">
+                    <div class="grade-letter">A</div>
+                    <div class="grade-label">GRADE</div>
+                </div>
             </div>
-            <div class="degree-logo-wrap">
-                <img src="1698939571245.jpg" alt="University Logo">
+            <div class="degree-info-row">
+                <div class="info-chip">📅 Duration: <span>Feb 2022 – Sep 2025</span></div>
+                <div class="info-chip">📍 Location: <span>Nagpur, Maharashtra</span></div>
+                <div class="info-chip">🎓 Degree: <span>Bachelor of Technology</span></div>
+                <div class="info-chip">📖 Field: <span>Computer Software Engineering</span></div>
+            </div>
+            <p class="degree-desc">Specialized in software architecture, full-stack web development, and logic-based programming. Gained strong expertise in C, C++, HTML5, CSS3, JavaScript, and modern development practices with a focus on building responsive, user-friendly web applications.</p>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section-label">— CERTIFICATIONS</div>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-icon">🌐</div>
+                <div class="cert-title">Web Developer</div>
+                <div class="cert-desc">Certified in modern web development covering HTML5, CSS3, JavaScript, and responsive design principles.</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">⚡</div>
+                <div class="cert-title">C++ Language</div>
+                <div class="cert-desc">Certified in C++ programming covering object-oriented design, data structures, and algorithm development.</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">💻</div>
+                <div class="cert-title">C Language</div>
+                <div class="cert-desc">Certified in C programming with a strong foundation in logic building, pointers, and system-level concepts.</div>
             </div>
         </div>
 
+        <!-- Areas of Focus -->
         <div class="section-label">— AREAS OF FOCUS</div>
         <div class="focus-grid">
             <div class="focus-card">
                 <div class="focus-num">01</div>
-                <div class="focus-title">Distributed Systems</div>
-                <div class="focus-desc">Study of scalable, fault-tolerant systems that operate across networked environments.</div>
+                <div class="focus-title">Frontend Development</div>
+                <div class="focus-desc">Building responsive, pixel-perfect UIs with HTML5, CSS3, and JavaScript for seamless user experiences.</div>
             </div>
             <div class="focus-card">
                 <div class="focus-num">02</div>
@@ -330,8 +451,8 @@
             </div>
             <div class="focus-card">
                 <div class="focus-num">03</div>
-                <div class="focus-title">Full-Stack Development</div>
-                <div class="focus-desc">End-to-end application development spanning frontend, backend, and data layers.</div>
+                <div class="focus-title">Logic & Problem Solving</div>
+                <div class="focus-desc">Strong foundation in algorithmic thinking and logic building through C and C++ programming.</div>
             </div>
         </div>
 

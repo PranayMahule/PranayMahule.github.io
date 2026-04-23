@@ -1,1 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Pranay Mahule</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050507;
+            --surface: #0d0d12;
+            --accent: #7c3aed;
+            --accent-glow: rgba(124, 58, 237, 0.25);
+            --accent2: #06b6d4;
+            --text: #f0f0f5;
+            --muted: #52525b;
+            --border: rgba(255,255,255,0.06);
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(124,58,237,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124,58,237,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            background: rgba(5,5,7,0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--text);
+        }
+        .logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 0.25rem; }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text);
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* Page header */
+        .page-header {
+            position: relative;
+            z-index: 1;
+            padding: 10rem 8% 5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .page-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        .page-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -3px;
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 8%;
+        }
+
+        /* Bio section */
+        .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 6rem;
+            align-items: start;
+            margin-bottom: 6rem;
+        }
+
+        .bio-left {}
+        .bio-tag {
+            display: inline-block;
+            background: rgba(124,58,237,0.1);
+            border: 1px solid rgba(124,58,237,0.2);
+            color: var(--accent);
+            font-size: 0.72rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+        .bio-heading {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+        }
+        .bio-text {
+            color: #a1a1aa;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        .bio-text p + p { margin-top: 1rem; }
+
+        /* Divider */
+        .vert-divider {
+            width: 1px;
+            height: 100%;
+            background: var(--border);
+            position: absolute;
+            left: 50%;
+        }
+
+        /* Highlights */
+        .highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            padding: 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: border-color 0.3s;
+        }
+        .highlight-item:hover { border-color: rgba(124,58,237,0.3); }
+        .hi-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: rgba(124,58,237,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+        .hi-content h4 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+        .hi-content p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Skills */
+        .section-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 6rem;
+        }
+        .skill-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            transition: all 0.3s;
+            cursor: default;
+        }
+        .skill-card:hover {
+            border-color: rgba(124,58,237,0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px var(--accent-glow);
+        }
+        .skill-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .skill-name {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .skill-tag {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            color: #a1a1aa;
+            font-size: 0.72rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 100px;
+            font-weight: 500;
+        }
+
+        /* Philosophy */
+        .philosophy-block {
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            background: var(--surface);
+            position: relative;
+            overflow: hidden;
+        }
+        .philosophy-block::before {
+            content: '"';
+            position: absolute;
+            top: -1rem;
+            left: 2rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 12rem;
+            font-weight: 900;
+            color: rgba(124,58,237,0.07);
+            line-height: 1;
+        }
+        .philosophy-text {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
+        }
+        .philosophy-text em {
+            color: var(--accent);
+            font-style: normal;
+        }
+        .philosophy-attr {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">PRANAY<span>_</span></div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html" class="active">ABOUT</a>
+            <a href="education.html">EDUCATION</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="page-label">01 — ABOUT ME</div>
+        <h1 class="page-title">Biography.</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="bio-section">
+            <div class="bio-left">
+                <div class="bio-tag">WHO I AM</div>
+                <h2 class="bio-heading">Solution-oriented engineer. Architecture-first thinker.</h2>
+                <div class="bio-text">
+                    <p>I am a Software Engineer focused on building scalable end-to-end digital infrastructures. My work balances high-speed backend efficiency with immersive frontend experiences.</p>
+                    <p>Specializing in the MERN stack and PHP/MySQL, I prioritize Clean Architecture to ensure every system is performant, secure, and ready for long-term growth.</p>
+                </div>
+            </div>
+            <div class="highlights">
+                <div class="highlight-item">
+                    <div class="hi-icon">⚡</div>
+                    <div class="hi-content">
+                        <h4>Performance-first mindset</h4>
+                        <p>Every architectural decision is made with scalability and speed as core constraints, not afterthoughts.</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="hi-icon">🔐</div>
+                    <div class="hi-content">
+                        <h4>Security by design</h4>
+                        <p>Clean architecture and security practices are baked into development from day one — not patched in later.</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="hi-icon">🌐</div>
+                    <div class="hi-content">
+                        <h4>Full-stack ownership</h4>
+                        <p>From database schema to pixel-perfect UI, I own the entire vertical and optimize across all layers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-label">02 — TECHNICAL SKILLS</div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <div class="skill-name">Frontend</div>
+                <div class="skill-list">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">UI/UX</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">⚙️</div>
+                <div class="skill-name">Backend</div>
+                <div class="skill-list">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">REST APIs</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🗄️</div>
+                <div class="skill-name">Database</div>
+                <div class="skill-list">
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Data Arch.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-label">03 — PHILOSOPHY</div>
+        <div class="philosophy-block">
+            <p class="philosophy-text">
+                Great software isn't just about working code — it's about <em>clean systems</em> that are built to <em>last</em>, adapt, and scale without falling apart at the seams.
+            </p>
+            <p class="philosophy-attr">— Pranay Mahule, Software Engineer</p>
+        </div>
+
+    </div>
+</body>
+</html>

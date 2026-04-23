@@ -139,7 +139,7 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 1rem;
             margin-bottom: 5rem;
         }
@@ -174,6 +174,7 @@
         .cc-icon.linkedin { background: rgba(6,182,212,0.15); }
         .cc-icon.github { background: rgba(255,255,255,0.06); }
         .cc-icon.whatsapp { background: rgba(37,211,102,0.15); }
+        .cc-icon.facebook { background: rgba(24,119,242,0.15); }
 
         .cc-label {
             font-family: 'Playfair Display', serif;
@@ -220,6 +221,11 @@
             color: var(--muted);
         }
 
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
         @media (max-width: 768px) {
             .contact-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -274,6 +280,12 @@
                 <div class="cc-icon whatsapp">💬</div>
                 <div class="cc-label">WHATSAPP</div>
                 <div class="cc-value">+91 75594 97704</div>
+                <div class="cc-arrow">↗</div>
+            </a>
+            <a href="https://facebook.com/PranayMahule" target="_blank" class="contact-card">
+                <div class="cc-icon facebook">📘</div>
+                <div class="cc-label">FACEBOOK</div>
+                <div class="cc-value">PranayMahule</div>
                 <div class="cc-arrow">↗</div>
             </a>
         </div>
